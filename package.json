@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.0.1",
+  "version": "0.0.1", 
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array",
   "main": "./src/index.ts",
   "scripts": {

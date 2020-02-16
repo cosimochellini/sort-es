@@ -1,5 +1,10 @@
 import { assert } from 'chai';
-import defaultAwesomeFunction, { awesomeFunction } from '../src';
+import { byDate, byNumber, byValue, byString } from '../src';
+
+
+const array = ["134", "pfoiwe", "wopeifpwfoe", "2fiweio"].sort(byString({ desc: false }))
+
+const array2 = [{ id: 1 }, { id: 2 }, { id: 3, ciao: { miao: 23 } }].sort(byValue(c => c?.ciao?.miao, byNumber({ desc: false })))
 
 describe('Awesome test.', () => {
   it('should test default awesome function', () => {

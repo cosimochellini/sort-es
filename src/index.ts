@@ -50,6 +50,16 @@ const getValueByDiscriminator = <T, TPropType>(obj: T, discriminator: string | (
 
 const sort = (sortResult: number, options: sortOption) => (options.desc ? 1 : -1) * sortResult
 
-const array = ["134", "pfoiwe", "wopeifpwfoe", "2fiweio"].sort(byString({ desc: false }))
+export default {
+    byString,
+    byNumber,
+    byDate,
+    byValue,
+}
 
-const array2 = [{ id: 1 }, { id: 2 }, { id: 3, ciao: { miao: 23 } }].sort(byValue(c => c?.ciao?.miao, byString({ desc: false })))
+export {
+    byString,
+    byNumber,
+    byDate,
+    byValue,
+}
