@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.0.1", 
+  "version": "0.0.2",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array",
   "main": "./src/index.ts",
   "scripts": {
@@ -13,7 +13,7 @@
     "cover": "nyc --check-coverage npm run test:only",
     "lint": "eslint src test",
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
-    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+    "_prepublish": "npm run clean && npm run lint && npm run test && npm run build"
   },
   "files": [
     "lib",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flexdinesh/npm-module-boilerplate.git"
+    "url": "git+https://github.com/cosimochellini/sort-es.git"
   },
   "keywords": [
     "boilerplate",
@@ -33,9 +33,9 @@
   "author": "Dinesh Pandiyan <flexdinesh@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flexdinesh/npm-module-boilerplate/issues"
+    "url": "https://github.com/cosimochellini/sort-es/issues"
   },
-  "homepage": "https://github.com/flexdinesh/npm-module-boilerplate#readme",
+  "homepage": "https://github.com/cosimochellini/sort-es#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
