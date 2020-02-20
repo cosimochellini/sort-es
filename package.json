@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array",
   "main": "./src/index.ts",
   "scripts": {
@@ -12,7 +12,8 @@
     "cover": "nyc --check-coverage npm run test:only",
     "lint": "eslint src test",
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
-    "_prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+    "_prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "cypress": ".\\node_modules\\.bin\\cypress open"
   },
   "files": [
     "src"
@@ -39,6 +40,7 @@
   },
   "homepage": "https://github.com/cosimochellini/sort-es#readme",
   "devDependencies": {
+    "cypress": "^4.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.7.0",
@@ -46,5 +48,6 @@
     "eslint-plugin-react": "^7.4.0",
     "nyc": "^15.0.0",
     "tslint-config-prettier": "^1.18.0"
-  }
+  },
+  "dependencies": {}
 }
