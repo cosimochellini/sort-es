@@ -1,10 +1,12 @@
-import { assert } from 'chai';
-import { byDate, byNumber, byValue, byString } from '../src/index.ts';
+import { byNumber, byValue, byString } from '../src'
 
+const array = ['134', 'pfoiwe', 'wopeifpwfoe', '2fiweio'].sort(byString({ desc: false }))
 
-const array = ["134", "pfoiwe", "wopeifpwfoe", "2fiweio"].sort(byString({ desc: false }))
+const array2 = [{ id: 1 }, { id: 2 }, { id: 3, ciao: { miao: 23 } }].sort(byValue(c => c.id, byNumber({ desc: false })))
 
-const array2 = [{ id: 1 }, { id: 2 }, { id: 3, ciao: { miao: 23 } }].sort(byValue(c => c.ciao?.miao, byNumber({ desc: false })))
+const { log } = console
+
+log(array, array2)
 
 // describe('Awesome test.', () => {
 //   it('should test default awesome function', () => {
