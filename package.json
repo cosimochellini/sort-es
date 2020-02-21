@@ -11,7 +11,7 @@
     "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
     "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
     "cover": "nyc --check-coverage yarn test:only",
-    "lint": "eslint src/** test/**",
+    "lint": "eslint src/* test/*",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "cypress": ".\\node_modules\\.bin\\cypress open"
   },
