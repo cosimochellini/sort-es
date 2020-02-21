@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array",
   "scripts": {
     "clean": "rm dist",
