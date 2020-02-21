@@ -1,11 +1,12 @@
 import sort from "../sort";
-import { sortOption } from "../interfaces/interfaces";
+import { SortOption } from "../interfaces/interfaces";
 import { sortableWithOption, sortable } from "../types/types";
 
 const byNumber: sortableWithOption<number> = (
-  options: sortOption = { desc: false }
+  options: SortOption = { desc: false }
 ): sortable<number> => {
-  return (first: number, second: number) => sort(first - second, options);
+  return (first: number, second: number): number =>
+    sort(first - second, options);
 };
 
 export default byNumber;

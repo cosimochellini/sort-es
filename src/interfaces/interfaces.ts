@@ -1,10 +1,10 @@
-interface sortOption {
+interface SortOption {
   desc?: boolean;
 }
 
-interface sortByDateOption {
+interface SortByDateOption {
   desc?: boolean;
   customParser?: (item: string | number) => Date;
 }
 
-export { sortOption, sortByDateOption };
+export { SortOption, SortByDateOption };

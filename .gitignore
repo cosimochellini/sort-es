@@ -41,3 +41,4 @@ package-lock.json
 
 others
 .DS_Store
+/dist/

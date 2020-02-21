@@ -1,11 +1,11 @@
 import sort from "../sort";
-import { sortOption } from "../interfaces/interfaces";
+import { SortOption } from "../interfaces/interfaces";
 import { sortableWithOption, sortable } from "../types/types";
 
 const byString: sortableWithOption<string> = (
-  options: sortOption = { desc: false }
+  options: SortOption = { desc: false }
 ): sortable<string> => {
-  return (first: string, second: string) =>
+  return (first: string, second: string): number =>
     sort(first.localeCompare(second), options);
 };
 
