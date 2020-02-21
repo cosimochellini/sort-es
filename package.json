@@ -1,7 +1,7 @@
 {
   "name": "sort-es",
-  "version": "0.0.7",
-  "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array",
+  "version": "0.0.8",
+  "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than a KB!",
   "scripts": {
     "clean": "rm dist",
     "build": "yarn lint && tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
