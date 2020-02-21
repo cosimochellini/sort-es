@@ -1,3 +1,5 @@
+import { sortable } from "../types/types";
+
 const byValue = <T, TPropType>(
   discriminator: string | ((item: T) => TPropType),
   sortFn: sortable<TPropType>

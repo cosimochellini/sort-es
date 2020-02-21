@@ -1,4 +1,6 @@
 import sort from "../sort";
+import { sortByDateOption } from "../interfaces/interfaces";
+import { sortableWithOption, sortable } from "../types/types";
 
 const byDate: sortableWithOption<Date | string> = (
   options: sortByDateOption = { desc: false }

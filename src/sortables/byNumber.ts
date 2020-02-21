@@ -1,4 +1,6 @@
 import sort from "../sort";
+import { sortOption } from "../interfaces/interfaces";
+import { sortableWithOption, sortable } from "../types/types";
 
 const byNumber: sortableWithOption<number> = (
   options: sortOption = { desc: false }

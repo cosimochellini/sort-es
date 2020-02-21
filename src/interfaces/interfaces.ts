@@ -6,3 +6,5 @@ interface sortByDateOption {
   desc?: boolean;
   customParser?: (item: string | number) => Date;
 }
+
+export { sortOption, sortByDateOption };
