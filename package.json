@@ -13,7 +13,9 @@
     "cover": "nyc --check-coverage yarn test:only",
     "lint": "eslint src test",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
-    "cypress": ".\\node_modules\\.bin\\cypress open"
+    "cypress": ".\\node_modules\\.bin\\cypress open",
+    "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
+
   },
   "main": "dist/index.js",
   "module": "dist/index.min.mjs",
