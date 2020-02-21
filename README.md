@@ -1,17 +1,41 @@
-# Sort-es
+# sort-es
 
-[![Build Status](https://travis-ci.org/flexdinesh/npm-module-boilerplate.svg?branch=master)](https://travis-ci.org/flexdinesh/npm-module-boilerplate) [![dependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate) [![devDependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/dev-status.svg)](https://david-dm.org/cosimochellini/sort-es?type=dev) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![dependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate)
+[![devDependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/dev-status.svg)](https://david-dm.org/cosimochellini/sort-es?type=dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Build](https://github.com/cosimochellini/sort-es/workflows/Npm%20deploy/badge.svg)
-**Start developing your NPM module in seconds** ✨
+![Version](https://img.shields.io/npm/v/sort-es.svg)
 
-Readymade boilerplate setup with all the best practices to kick start your npm/node module development.
+## Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array
 
-Happy hacking =)
+## Docs : https://www.npmjs.com/package/sort-es
 
-# Features
+# Getting started
 
-https://cdn.jsdelivr.net/npm/sort-es@latest/dist/index.umd.min.js
-https://cdn.jsdelivr.net/npm/sort-es@latest/dist/index.min.mjs
+## installation
+
+The library is available as an [npm package](https://www.npmjs.com/package/sort-es).
+To install the package, run:
+
+```
+npm install sort-es
+# or
+yarn add sort-es
+```
+
+Start using:
+
+```
+import { byString } from 'sort-es'
+
+const unsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
+const sorted = arrayUnsorted.sort(byString());
+
+console.log(sorted); //(5) ["aaa", "bbbb", "cccc", "xxx", "zzz"]
+```
+
+https://cdn.jsdelivr.net/npm/sort-es/dist/index.umd.min.js
+https://cdn.jsdelivr.net/npm/sort-es/dist/index.min.mjs
 
 - **ES6/ESNext** - Write _ES6_ code and _Babel_ will transpile it to ES5 for backwards compatibility
 - **Test** - _Mocha_ with _Istanbul_ coverage

@@ -10,7 +10,7 @@ describe("My First sort", function() {
   it("Does sort an array", function() {
     const arrayUnsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
 
-    const arraySorted = arrayUnsorted.sort(byString({ desc: true }));
+    const arraySorted = arrayUnsorted.sort(byString());
     const { 0: first, [arraySorted.length - 1]: last } = arraySorted;
     expect(first).to.equal("aaa");
     expect(last).to.equal("zzz");
