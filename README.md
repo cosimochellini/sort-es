@@ -10,6 +10,9 @@ Happy hacking =)
 
 # Features
 
+https://cdn.jsdelivr.net/npm/sort-es@latest/dist/index.umd.min.js
+https://cdn.jsdelivr.net/npm/sort-es@latest/dist/index.min.mjs
+
 - **ES6/ESNext** - Write _ES6_ code and _Babel_ will transpile it to ES5 for backwards compatibility
 - **Test** - _Mocha_ with _Istanbul_ coverage
 - **Lint** - Preconfigured _ESlint_ with _Airbnb_ config
@@ -35,4 +38,4 @@ Just clone this repo and remove `.git` folder.
 
 # License
 
-MIT © Dinesh Pandiyan
+MIT © Cosimo chellini
