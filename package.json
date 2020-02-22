@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
   "scripts": {
     "clean": "rm dist",
@@ -77,6 +77,5 @@
     "typescript": "^3.8.2",
     "cosmiconfig": "^6.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
