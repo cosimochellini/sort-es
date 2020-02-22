@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.0.10",
+  "version": "0.2.3",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than a KB!",
   "scripts": {
     "clean": "rm dist",
@@ -11,10 +11,17 @@
     "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
     "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
     "cover": "nyc --check-coverage yarn test:only",
-    "lint": "eslint src test",
+    "lint": "eslint src/*.ts test/*.js ",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "cypress": ".\\node_modules\\.bin\\cypress open",
-    "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats"
+    "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
+    "bump": "yarn version --loose-semver --new-version patch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn bump"
+    }
   },
   "main": "dist/index.js",
   "module": "dist/index.min.mjs",
@@ -55,6 +62,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.4.0",
+    "husky": "^4.2.3",
     "nyc": "^15.0.0",
     "rollup": "^1.31.1",
     "terser": "^4.6.3",
