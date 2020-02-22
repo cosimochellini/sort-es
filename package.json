@@ -1,7 +1,7 @@
 {
   "name": "sort-es",
-  "version": "0.2.3",
-  "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than a KB!",
+  "version": "0.2.6",
+  "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
   "scripts": {
     "clean": "rm dist",
     "build": "yarn lint && tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
@@ -15,12 +15,17 @@
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "cypress": ".\\node_modules\\.bin\\cypress open",
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
-    "bump": "yarn version --loose-semver --new-version patch"
+    "release": "standard-version"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint",
-      "pre-push": "yarn bump"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "main": "dist/index.js",
@@ -52,6 +57,8 @@
   },
   "homepage": "https://github.com/cosimochellini/sort-es#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "babel-eslint": "^10.0.3",
@@ -69,5 +76,7 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cosmiconfig": "^6.0.0"
+  }
 }
