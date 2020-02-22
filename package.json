@@ -17,10 +17,12 @@
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
     "bump": "yarn version --loose-semver --new-version patch"
   },
-  "pre-commit": [
-    "lint",
-    "bump"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn bump"
+    }
+  },
   "main": "dist/index.js",
   "module": "dist/index.min.mjs",
   "unpkg": "dist/index.umd.min.js",
@@ -60,6 +62,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.4.0",
+    "husky": "^4.2.3",
     "nyc": "^15.0.0",
     "rollup": "^1.31.1",
     "terser": "^4.6.3",
