@@ -74,9 +74,9 @@
     "rollup": "^1.31.1",
     "terser": "^4.6.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.2",
+    "cosmiconfig": "^6.0.0"
   },
   "dependencies": {
-    "cosmiconfig": "^6.0.0"
   }
 }
