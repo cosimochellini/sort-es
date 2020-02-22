@@ -10,8 +10,9 @@
     "bundle:esm:min": "terser --ecma 6 --compress --mangle --module -o dist/index.min.mjs -- dist/index.mjs",
     "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
     "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
     "cover": "nyc --check-coverage yarn test:only",
-    "lint": "eslint src/*.ts test/*.js ",
+    "lint": "eslint src/*.ts",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "cypress": ".\\node_modules\\.bin\\cypress open",
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
@@ -62,7 +63,8 @@
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "babel-eslint": "^10.0.3",
-    "cypress": "^4.0.2",
+    "chai": "^4.2.0",
+    "cosmiconfig": "^6.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.7.0",
@@ -70,13 +72,17 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.4.0",
     "husky": "^4.2.3",
+    "mocha": "^7.0.1",
     "nyc": "^15.0.0",
     "rollup": "^1.31.1",
     "terser": "^4.6.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.2",
-    "cosmiconfig": "^6.0.0"
+    "@types/chai": "^4.2.9",
+    "@types/node": "^13.7.4",
+    "@types/mocha": "^7.0.1",
+    "cross-env": "^7.0.0",
+    "ts-node": "^8.6.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

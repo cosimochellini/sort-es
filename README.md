@@ -9,6 +9,7 @@
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/cosimochellini/sort-es)
 ![npm](https://img.shields.io/npm/dw/sort-es)
 
+
 ## Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array
 
 ## Docs : https://www.npmjs.com/package/sort-es
@@ -32,36 +33,35 @@ Start using:
 import { byString } from 'sort-es'
 
 const unsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
-const sorted = arrayUnsorted.sort(byString());
+const sorted = unsorted.sort(byString());
 
 console.log(sorted); //(5) ["aaa", "bbbb", "cccc", "xxx", "zzz"]
 ```
 
-https://cdn.jsdelivr.net/npm/sort-es/dist/index.umd.min.js
-https://cdn.jsdelivr.net/npm/sort-es/dist/index.min.mjs
+Use directly in the browser
 
-- **ES6/ESNext** - Write _ES6_ code and _Babel_ will transpile it to ES5 for backwards compatibility
-- **Test** - _Mocha_ with _Istanbul_ coverage
-- **Lint** - Preconfigured _ESlint_ with _Airbnb_ config
-- **CI** - _TravisCI_ configuration setup
-- **Minify** - Built code will be minified for performance
+```
+<script src='https://cdn.jsdelivr.net/npm/sort-es/dist/index.umd.min.js'></script>
+<script>
+    const unsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
+    const sorted = unsorted.sort(sort.byString());
 
-# Commands
+    console.log(sorted); //(5) ["aaa", "bbbb", "cccc", "xxx", "zzz"]
+</script>
 
-- `npm run clean` - Remove `lib/` directory
-- `npm test` - Run tests with linting and coverage results.
-- `npm test:only` - Run tests without linting or coverage.
-- `npm test:watch` - You can even re-run tests on file changes!
-- `npm test:prod` - Run tests with minified code.
-- `npm run test:examples` - Test written examples on pure JS for better understanding module usage.
-- `npm run lint` - Run ESlint with airbnb-config
-- `npm run cover` - Get coverage report for your code.
-- `npm run build` - Babel will transpile ES6 => ES5 and minify the code.
-- `npm run prepublish` - Hook for npm. Do all the checks before publishing your module.
+//or via browser modules
 
-# Installation
+<script type='module'>
+    import { byString } from 'https://cdn.jsdelivr.net/npm/sort-es/dist/index.min.mjs'
+    
+    const unsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
+    const sorted = unsorted.sort(byString());
 
-Just clone this repo and remove `.git` folder.
+    console.log(sorted); //(5) ["aaa", "bbbb", "cccc", "xxx", "zzz"]
+</script>
+```
+
+## See full Docs : https://www.npmjs.com/package/sort-es
 
 # License
 
