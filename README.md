@@ -1,10 +1,13 @@
 # sort-es
 
 [![dependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate)
-[![devDependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/dev-status.svg)](https://david-dm.org/cosimochellini/sort-es?type=dev)
+[![devDependencies Status](https://david-dm.org/cosimochellini/sort-es/dev-status.svg)](https://david-dm.org/cosimochellini/sort-es?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Build](https://github.com/cosimochellini/sort-es/workflows/Npm%20deploy/badge.svg)
 ![Version](https://img.shields.io/npm/v/sort-es.svg)
+[![Known Vulnerabilities](https://snyk.io/test/npm/sort-es/badge.svg)](https://snyk.io/test/npm/sort-es)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/cosimochellini/sort-es)
+![npm](https://img.shields.io/npm/dw/sort-es)
 
 ## Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array
 
