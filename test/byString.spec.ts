@@ -1,6 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
-import { byString } from "../index";
+import { byString } from "../src/index";
 import { getFirstAndLast } from './utils/sort';
 
 describe("ByString sorting", function () {
@@ -30,6 +30,7 @@ describe("ByString sorting desc", function () {
         expect(last).to.equal("aaa");
 
         expect(first).to.equal("zzz");
+        
 
     });
 });

@@ -10,11 +10,10 @@
     "bundle:esm:min": "terser --ecma 6 --compress --mangle --module -o dist/index.min.mjs -- dist/index.mjs",
     "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
     "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "cover": "nyc --check-coverage yarn test:only",
+    "test": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
+    "cover": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
     "lint": "eslint src/*.ts",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
-    "cypress": ".\\node_modules\\.bin\\cypress open",
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
     "release": "standard-version"
   },
@@ -22,6 +21,19 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
   },
   "husky": {
     "hooks": {
@@ -60,11 +72,15 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/chai": "^4.2.9",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.7.4",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
     "cosmiconfig": "^6.0.0",
+    "cross-env": "^7.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.7.0",
@@ -75,14 +91,11 @@
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
     "rollup": "^1.31.1",
+    "source-map-support": "^0.5.16",
     "terser": "^4.6.3",
+    "ts-node": "^8.6.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.2",
-    "@types/chai": "^4.2.9",
-    "@types/node": "^13.7.4",
-    "@types/mocha": "^7.0.1",
-    "cross-env": "^7.0.0",
-    "ts-node": "^8.6.2"
+    "typescript": "^3.8.2"
   },
   "dependencies": {}
 }

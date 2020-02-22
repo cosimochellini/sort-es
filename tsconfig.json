@@ -23,7 +23,6 @@
   },
   "include": [
     "**/*.ts",
-    "cypress/integrations/byString.spec.js"
   ],
   "exclude": [
     "node_modules",
