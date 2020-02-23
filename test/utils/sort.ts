@@ -4,4 +4,6 @@ const getFirstAndLast = <T>(array: T[]): T[] => {
     return [first, last]
 }
 
-export { getFirstAndLast }
+const reverse = <T>(array: T[]): T[] => array.concat().reverse()
+
+export { getFirstAndLast, reverse }

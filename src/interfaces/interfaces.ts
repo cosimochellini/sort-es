@@ -1,10 +1,12 @@
+import { datable } from 'src/types/types';
+
 interface SortOption {
   desc?: boolean;
 }
 
 interface SortByDateOption {
   desc?: boolean;
-  customParser?: (item: string | number) => Date;
+  customParser?: (item: datable) => Date;
 }
 
 export { SortOption, SortByDateOption };

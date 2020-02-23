@@ -1,11 +1,14 @@
 import 'mocha';
 import { expect } from 'chai';
 import { byString } from "../src/index";
-import { getFirstAndLast } from './utils/sort';
+import { getFirstAndLast, reverse } from './utils/sort';
+import { expectArrayToBeEquals } from './utils/expectFns';
+
+const arrayUnsorted = ["xxx", "bbb", "zzz", "cccc", "aaa"];
+const correctArraySorted = ["aaa", "bbb", "cccc", "xxx", "zzz"];
 
 describe("ByString sorting", function () {
     it("Does sort an array by string", function () {
-        const arrayUnsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
 
         const arraySorted = arrayUnsorted.sort(byString());
 
@@ -15,13 +18,14 @@ describe("ByString sorting", function () {
 
         expect(last).to.equal("zzz");
 
+        expectArrayToBeEquals(arraySorted, correctArraySorted)
+
     });
 });
 
 
 describe("ByString sorting desc", function () {
     it("Does sort an array by string descending", function () {
-        const arrayUnsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
 
         const arraySorted = arrayUnsorted.sort(byString({ desc: true }));
 
@@ -30,7 +34,8 @@ describe("ByString sorting desc", function () {
         expect(last).to.equal("aaa");
 
         expect(first).to.equal("zzz");
-        
+
+        expectArrayToBeEquals(arraySorted, reverse(correctArraySorted))
 
     });
 });
