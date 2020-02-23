@@ -1,4 +1,4 @@
-import { datable } from 'src/types/types';
+import { datable } from '../types/types'
 
 interface SortOption {
   desc?: boolean;
