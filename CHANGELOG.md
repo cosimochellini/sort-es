@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/cosimochellini/sort-es/compare/v0.2.9...v0.2.10) (2020-02-26)
+
+
+### Bug Fixes
+
+* fixed import for types ([b4ed816](https://github.com/cosimochellini/sort-es/commit/b4ed816af386921b86a79643bf4fd21f324a8692))
+
+### [0.2.8](https://github.com/cosimochellini/sort-es/compare/v0.2.7...v0.2.8) (2020-02-22)
+
 ### [0.2.9](https://github.com/cosimochellini/sort-es/compare/v0.2.7...v0.2.9) (2020-02-23)
 ### [0.2.8](https://github.com/cosimochellini/sort-es/compare/v0.2.7...v0.2.8) (2020-02-22)
 
