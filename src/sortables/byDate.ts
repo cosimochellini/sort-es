@@ -1,16 +1,23 @@
 import sort from "../sort";
 import { SortByDateOption } from "../interfaces/interfaces";
-import { sortableWithOption, sortable } from "../types/types";
+import { sortableWithOption, sortable, datable } from "../types/types";
 
-const byDate: sortableWithOption<Date | string> = (
-  options: SortByDateOption = { desc: false }
-): sortable<Date | string> => {
-  return (first: Date | string, second: Date | string): number => {
-    if (typeof first === "string")
-      first = options.customParser(first) ?? new Date(first);
+const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
+  if (!parser)
+    return new Date(date);
 
-    if (typeof second === "string")
-      second = options.customParser(second) ?? new Date(second);
+  return parser(date);
+
+}
+
+const byDate: sortableWithOption<datable> = (options: SortByDateOption = { desc: false }): sortable<datable> => {
+  return (first: datable, second: datable): number => {
+
+    if (typeof first === "string" || typeof first === "number")
+      first = parseDate(options.customParser, first);
+
+    if (typeof second === "string" || typeof second === "number")
+      second = parseDate(options.customParser, second);
 
     return sort(first.getTime() - second.getTime(), options);
   };

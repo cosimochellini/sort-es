@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["dom", "es2017", "es2018.promise"],
+    "lib": [
+      "dom",
+      "es2017",
+      "es2018.promise"
+    ],
     "strict": true,
     "moduleResolution": "Node",
     "noUnusedLocals": true,
@@ -15,9 +19,17 @@
     "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-
+    "sourceMap": true
   },
-  "include": ["**/*.ts", "cypress/integration/examples/byString.spec.js"],
-  "exclude": ["node_modules", "dist"],
-  "types": ["cypress"]
+  "include": [
+    "**/*.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "./src/**/*.spec.ts"
+  ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ],
 }
