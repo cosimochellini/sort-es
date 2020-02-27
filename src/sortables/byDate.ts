@@ -3,18 +3,18 @@ import { SortByDateOption } from "../interfaces/interfaces";
 import { sortableWithOption, sortable, datable } from "../types/types";
 
 const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
-  if (!parser)
-    return new Date(date);
+  if (typeof parser !== "function") return new Date(date);
 
   return parser(date);
+};
 
-}
-
-const byDate: sortableWithOption<datable> = (options: SortByDateOption = { desc: false }): sortable<datable> => {
+const byDate: sortableWithOption<datable, SortByDateOption> = (
+  options: SortByDateOption = { desc: false, customParser: null }
+): sortable<datable> => {
   return (first: datable, second: datable): number => {
-
-    if (typeof first === "string" || typeof first === "number")
+    if (typeof first === "string" || typeof first === "number") {
       first = parseDate(options.customParser, first);
+    }
 
     if (typeof second === "string" || typeof second === "number")
       second = parseDate(options.customParser, second);
