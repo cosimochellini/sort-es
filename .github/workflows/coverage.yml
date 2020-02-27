@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }} #required
-        fail_ci_if_error: true #optional (default = false)
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} #required
+          fail_ci_if_error: true #optional (default = false)
