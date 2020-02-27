@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
   "scripts": {
     "clean": "rm dist",
@@ -15,7 +15,8 @@
     "lint": "eslint src/*.ts",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
-    "release": "standard-version"
+    "release": "standard-version",
+    "codecov": "codecov"
   },
   "config": {
     "commitizen": {
@@ -84,6 +85,7 @@
     "@typescript-eslint/parser": "^2.21.0",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
+    "codecov": "^3.6.5",
     "cosmiconfig": "^6.0.0",
     "cross-env": "^7.0.0",
     "date-fns": "^2.10.0",
