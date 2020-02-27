@@ -11,7 +11,7 @@
     "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
     "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
     "test": "mocha --recursive --require ts-node/register --exit test/**/*.ts",
-    "cover": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
+    "cover": "nyc --reporter=lcov mocha --recursive --require ts-node/register --exit test/**/*.ts",
     "lint": "eslint src/*.ts",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
