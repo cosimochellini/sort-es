@@ -1,9 +1,14 @@
-import 'mocha';
-import { expect } from 'chai';
-import { addDays } from 'date-fns'
+import "mocha";
+import { expect } from "chai";
 import { byDate } from "../src/index";
-import { getFirstAndLast, reverse } from './utils/sort';
-import { expectArrayToBeEquals, expectDateToBeEquals, expectDatableToBeEquals } from './utils/expectFns';
+import { addDays, parseISO } from "date-fns";
+import { getFirstAndLast, reverse } from "./utils/sort";
+
+import {
+    expectObjectToBeEquals,
+  expectDateToBeEquals,
+  expectDatableToBeEquals
+} from "./utils/expectFns";
 
 const today = new Date();
 const tomorrow = addDays(today, 1);
@@ -11,54 +16,80 @@ const yesterday = addDays(today, -1);
 
 const arrayUnsorted = [tomorrow, today, yesterday];
 const arrayUnsortedTimespan = arrayUnsorted.map(d => d.getTime());
-// const arrayUnsortedString = arrayUnsorted.map(d => d.toString());
+const arrayUnsortedString = arrayUnsorted.map(d => d.toString());
 
 const correctArraySorted = [yesterday, today, tomorrow];
 
-describe("ByDate sorting", function () {
-    it("Does sort an array by date", function () {
+describe("ByDate sorting", () => {
+  it("Does sort an array by date", () => {
+    const arraySorted = arrayUnsorted.sort(byDate());
 
-        const arraySorted = arrayUnsorted.sort(byDate());
+    const [first, last] = getFirstAndLast(arraySorted);
 
-        const [first, last] = getFirstAndLast(arraySorted);
+    expect(first).to.equal(yesterday);
 
-        expect(first).to.equal(yesterday);
+    expect(last).to.equal(tomorrow);
 
-        expect(last).to.equal(tomorrow);
-
-        expectArrayToBeEquals(arraySorted, correctArraySorted);
-
-    });
+    expectObjectToBeEquals(arraySorted, correctArraySorted);
+  });
 });
 
-describe("ByDate sorting desc", function () {
-    it("Does sort an array by date descending", function () {
+describe("ByDate sorting desc", () => {
+  it("Does sort an array by date descending", () => {
+    const arraySorted = arrayUnsorted.sort(byDate({ desc: true }));
 
-        const arraySorted = arrayUnsorted.sort(byDate({ desc: true }));
+    const [first, last] = getFirstAndLast(arraySorted);
 
-        const [first, last] = getFirstAndLast(arraySorted);
+    expect(first).to.equal(tomorrow);
 
-        expect(first).to.equal(tomorrow);
+    expect(last).to.equal(yesterday);
 
-        expect(last).to.equal(yesterday);
-
-        expectArrayToBeEquals(arraySorted, reverse(correctArraySorted));
-
-    });
+    expectObjectToBeEquals(arraySorted, reverse(correctArraySorted));
+  });
 });
 
-describe("ByDate sorting desc", function () {
-    it("Does sort an array by date as number", function () {
+describe("ByDate sorting desc", () => {
+  it("Does sort an array by date as number", () => {
+    const arraySorted = arrayUnsortedTimespan.sort(byDate());
 
-        const arraySorted = arrayUnsortedTimespan.sort(byDate());
+    const [first, last] = getFirstAndLast(arraySorted);
 
-        const [first, last] = getFirstAndLast(arraySorted);
+    expectDateToBeEquals(first, yesterday);
 
-        expectDateToBeEquals(first, yesterday);
+    expectDateToBeEquals(last, tomorrow);
 
-        expectDateToBeEquals(last, tomorrow);
+    expectDatableToBeEquals(arraySorted, correctArraySorted);
+  });
+});
 
-        expectDatableToBeEquals(arraySorted, correctArraySorted);
+describe("ByDate sorting desc", () => {
+  it("Does sort an array by date as string", () => {
+    const arraySorted = arrayUnsortedString.sort(byDate());
 
-    });
+    const [first, last] = getFirstAndLast(arraySorted);
+
+    expectDateToBeEquals(first, yesterday);
+
+    expectDateToBeEquals(last, tomorrow);
+
+    expectDatableToBeEquals(arraySorted, correctArraySorted);
+  });
+});
+
+describe("ByDate sorting using custom parser", () => {
+  it("Does sort an array by date as number", () => {
+    const arraySorted = arrayUnsortedString.sort(
+      byDate({
+        customParser: item => parseISO(item.toString())
+      })
+    );
+
+    const [first, last] = getFirstAndLast(arraySorted);
+
+    expectDateToBeEquals(first, yesterday);
+
+    expectDateToBeEquals(last, tomorrow);
+
+    expectDatableToBeEquals(arraySorted, correctArraySorted);
+  });
 });

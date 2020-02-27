@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/cosimochellini/sort-es/compare/v0.2.9...v0.2.10) (2020-02-26)
+
+
+### Bug Fixes
+
+* fixed import for types ([b4ed816](https://github.com/cosimochellini/sort-es/commit/b4ed816af386921b86a79643bf4fd21f324a8692))
+
+### [0.2.8](https://github.com/cosimochellini/sort-es/compare/v0.2.7...v0.2.8) (2020-02-22)
+
 ### [0.2.9](https://github.com/cosimochellini/sort-es/compare/v0.2.7...v0.2.9) (2020-02-23)
+### [0.2.8](https://github.com/cosimochellini/sort-es/compare/v0.2.7...v0.2.8) (2020-02-22)
 
 
 ### Features
@@ -29,6 +39,7 @@ All notable changes to this project will be documented in this file. See [standa
 * added more tests + coverage ([e2fa77b](https://github.com/cosimochellini/sort-es/commit/e2fa77bec3a325b048bd0a3537fc8d31f471f9b1))
 * added sem versioni ([c8966c3](https://github.com/cosimochellini/sort-es/commit/c8966c30e46ed150447a1518440d4b8cece89e41))
 * added tests for byNumber and ByDate ([5aa96e6](https://github.com/cosimochellini/sort-es/commit/5aa96e6833ac4019a47e2d65ef3fc75ec8e722ce))
+* added sem versioni ([c8966c3](https://github.com/cosimochellini/sort-es/commit/c8966c30e46ed150447a1518440d4b8cece89e41))
 
 
 ### Bug Fixes

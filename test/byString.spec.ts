@@ -2,7 +2,7 @@ import 'mocha';
 import { expect } from 'chai';
 import { byString } from "../src/index";
 import { getFirstAndLast, reverse } from './utils/sort';
-import { expectArrayToBeEquals } from './utils/expectFns';
+import { expectObjectToBeEquals } from './utils/expectFns';
 
 const arrayUnsorted = ["xxx", "bbb", "zzz", "cccc", "aaa"];
 const correctArraySorted = ["aaa", "bbb", "cccc", "xxx", "zzz"];
@@ -18,7 +18,7 @@ describe("ByString sorting", function () {
 
         expect(last).to.equal("zzz");
 
-        expectArrayToBeEquals(arraySorted, correctArraySorted)
+        expectObjectToBeEquals(arraySorted, correctArraySorted)
 
     });
 });
@@ -35,7 +35,7 @@ describe("ByString sorting desc", function () {
 
         expect(first).to.equal("zzz");
 
-        expectArrayToBeEquals(arraySorted, reverse(correctArraySorted))
+        expectObjectToBeEquals(arraySorted, reverse(correctArraySorted))
 
     });
 });
