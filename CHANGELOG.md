@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/cosimochellini/sort-es/compare/v0.2.10...v0.2.11) (2020-02-27)
+
+
+### Features
+
+* added more unit tests ([472cb2c](https://github.com/cosimochellini/sort-es/commit/472cb2c9aca02ee3bdf262e62135e2f9cf8e9722))
+* finished codecov integration ([0eac5ef](https://github.com/cosimochellini/sort-es/commit/0eac5ef85bd95fc5b1c9d885f1f4c6b9e6699329))
+* initial test for coverage ([54255b4](https://github.com/cosimochellini/sort-es/commit/54255b4f8a532cd749d3bb527b34cd3f4882b828))
+
+
+### Bug Fixes
+
+* 1 more test ([1ddc046](https://github.com/cosimochellini/sort-es/commit/1ddc04657905ae94ffeeec1bf51e462ebbd6c38e))
+* bumped version ([1e0c2a0](https://github.com/cosimochellini/sort-es/commit/1e0c2a069309ae9d398d7e67b6f8e04d11c77154))
+* f ([e63cef2](https://github.com/cosimochellini/sort-es/commit/e63cef28c51fc46b974409f0e16f67e1a5eb78ab))
+* test ([c7715f9](https://github.com/cosimochellini/sort-es/commit/c7715f968f15d3ef4f52d65a1e14d8c2c4dac586))
+
 ### [0.2.10](https://github.com/cosimochellini/sort-es/compare/v0.2.9...v0.2.10) (2020-02-26)
 
 
