@@ -5,7 +5,7 @@ import { addDays, parseISO } from "date-fns";
 import { getFirstAndLast, reverse } from "./utils/sort";
 
 import {
-    expectObjectToBeEquals,
+  expectObjectToBeEquals,
   expectDateToBeEquals,
   expectDatableToBeEquals
 } from "./utils/expectFns";
