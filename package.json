@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
   "scripts": {
     "clean": "rm dist",
@@ -10,8 +10,7 @@
     "bundle:esm:min": "terser --ecma 6 --compress --mangle --module -o dist/index.min.mjs -- dist/index.mjs",
     "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
     "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
-    "test": "mocha --recursive --require ts-node/register --exit test/**/*.ts",
-    "cover": "nyc --reporter=lcov mocha --recursive --require ts-node/register --exit test/**/*.ts",
+    "test": "nyc --reporter=lcov mocha mocha --recursive --require ts-node/register --exit test/**/*.ts",
     "lint": "eslint src/*.ts",
     "_prepublish": "yarn clean && yarn lint && yarn test && yarn build",
     "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
