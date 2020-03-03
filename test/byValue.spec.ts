@@ -19,8 +19,8 @@ const correctArraySorted = [
   { prop: "zzz" }
 ];
 
-describe("ByString sorting", function() {
-  it("Does sort an array by string", function() {
+describe("ByString sorting", () => {
+  it("Does sort an array by string", () => {
     const arraySorted = arrayUnsorted.sort(byValue(x => x.prop, byString()));
 
     const [first, last] = getFirstAndLast(arraySorted);
@@ -33,8 +33,8 @@ describe("ByString sorting", function() {
   });
 });
 
-describe("ByString sorting desc", function() {
-  it("Does sort an array by string descending", function() {
+describe("ByString sorting desc", () => {
+  it("Does sort an array by string descending", () => {
     const arraySorted = arrayUnsorted.sort(
       byValue(x => x.prop, byString({ desc: true }))
     );
@@ -49,8 +49,8 @@ describe("ByString sorting desc", function() {
   });
 });
 
-describe("ByString sorting", function() {
-  it("Does sort an array by string", function() {
+describe("ByString sorting", () => {
+  it("Does sort an array by string", () => {
     const arraySorted = arrayUnsorted.sort(byValue("prop", byString()));
 
     const [first, last] = getFirstAndLast(arraySorted);
