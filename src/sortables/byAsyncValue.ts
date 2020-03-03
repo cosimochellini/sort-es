@@ -1,4 +1,4 @@
-import { sortable } from "src/types/types";
+import { sortable } from "../types/types";
 
 const sortAsync = async <T>(
   asyncItems: Promise<T>[],
