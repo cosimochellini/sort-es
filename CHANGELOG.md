@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.13](https://github.com/cosimochellini/sort-es/compare/v0.2.12...v0.2.13) (2020-03-06)
+
+
+### Features
+
+* **sort:** added byValues sorting fn ([599f208](https://github.com/cosimochellini/sort-es/commit/599f208464ecbccd97ac4e19d1e4157f424299f0))
+
+
+### Bug Fixes
+
+* fixed some runs ([fbe23ac](https://github.com/cosimochellini/sort-es/commit/fbe23ac8690886149888f2d6637a6bbfd2c57ffe))
+* path for types ([02e127b](https://github.com/cosimochellini/sort-es/commit/02e127b641095f483dc52724fb6852f5d9fdc733))
+
 ### [0.2.12](https://github.com/cosimochellini/sort-es/compare/v0.2.11...v0.2.12) (2020-03-03)
 
 
