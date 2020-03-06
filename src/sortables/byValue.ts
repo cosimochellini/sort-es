@@ -1,4 +1,4 @@
-import { sortable } from "../types/types";
+import {sortable} from "../types/types";
 
 const getValueByDiscriminator = <T, TPropType>(
   obj: T,

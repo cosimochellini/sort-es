@@ -11,7 +11,7 @@ const sortedArray = [{ id: 0 }, { id: 1 }, { id: 4 }, { id: 6 }, { id: 7 }];
 
 const test = async (): Promise<void> => {
   describe("ByAsyncValue sorting", () => {
-    it("Does sort an array by any promise<any>", async () => {
+    it("Does sort an array by any promise", async () => {
       const asyncArrayHandler = new AsyncArray(unsortedAsyncArray);
 
       const arraySorted = await asyncArrayHandler.sortAsync(
@@ -42,7 +42,7 @@ const test = async (): Promise<void> => {
   });
 
   describe("ByAsyncValue sorting", () => {
-    it("Does sort an array by any promise<any>", async () => {
+    it("Does sort an array by any promise", async () => {
       const asyncArrayHandler = new AsyncArray(unsortedAsyncArray);
 
       const arraySorted = await asyncArrayHandler.sortAsync(
