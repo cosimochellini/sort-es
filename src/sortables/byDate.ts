@@ -9,7 +9,7 @@ const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
 };
 
 const byDate: sortableWithOption<datable, SortByDateOption> = (
-  options: SortByDateOption = {desc: false, customParser: null}
+  options: SortByDateOption = {desc: false, customParser: null, nullable: false}
 ): sortable<datable> => {
   return (first: datable, second: datable): number => {
     if (typeof first === "string" || typeof first === "number") {

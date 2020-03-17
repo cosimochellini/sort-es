@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/cosimochellini/sort-es/compare/v0.2.13...v0.3.2) (2020-03-17)
+
+
+### Features
+
+* added test for byAny sortable ([b3ad87b](https://github.com/cosimochellini/sort-es/commit/b3ad87b71b7c6fb6019c9acb8585cff18e9025eb))
+
 ### [0.2.13](https://github.com/cosimochellini/sort-es/compare/v0.2.12...v0.2.13) (2020-03-06)
 
 
