@@ -12,7 +12,7 @@
 
 ## Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array
 
-## Docs : https://www.npmjs.com/package/sort-es
+## Docs : https://sort-es.netlify.com/
 
 # Getting started
 
@@ -61,7 +61,7 @@ Use directly in the browser
 </script>
 ```
 
-## See full Docs : https://www.npmjs.com/package/sort-es
+## See full Docs : https://sort-es.netlify.com/
 
 # License
 
