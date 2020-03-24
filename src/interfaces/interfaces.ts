@@ -5,9 +5,7 @@ interface SortOption {
   nullable?: boolean;
 }
 
-interface SortByDateOption {
-  desc?: boolean;
-  nullable?: boolean;
+interface SortByDateOption extends SortOption {
   customParser?: (item: datable) => Date;
 }
 

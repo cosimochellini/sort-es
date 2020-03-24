@@ -8,6 +8,4 @@ type SortableObject<T, K extends T> = {
   [key in keyof K]?: sortable<K[key]>;
 };
 
-type Nullable<T> = T | null;
-
-export {sortable, sortableWithOption, datable, SortableObject, Nullable};
+export {sortable, sortableWithOption, datable, SortableObject};

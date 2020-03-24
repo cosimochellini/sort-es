@@ -29,7 +29,7 @@ yarn add sort-es
 
 Start using:
 
-```
+```javascript
 import { byString } from 'sort-es'
 
 const unsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];
@@ -40,7 +40,7 @@ console.log(sorted); //(5) ["aaa", "bbbb", "cccc", "xxx", "zzz"]
 
 Use directly in the browser
 
-```
+```html
 <script src='https://cdn.jsdelivr.net/npm/sort-es/dist/index.umd.min.js'></script>
 <script>
     const unsorted = ["xxx", "bbbb", "zzz", "cccc", "aaa"];

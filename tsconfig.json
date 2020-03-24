@@ -1,7 +1,19 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "dist/*"
+      ]
+    },
     "target": "es6",
-    "lib": ["dom", "es2017", "es2018.promise", "es2019"],
+    "lib": [
+      "dom",
+      "es2017",
+      "es2018.promise",
+      "es2019"
+    ],
     "strict": true,
     "moduleResolution": "Node",
     "noUnusedLocals": true,
@@ -12,12 +24,19 @@
     "noImplicitThis": true,
     "strictNullChecks": false,
     "importHelpers": true,
-    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "sourceMap": true
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist", "./src/**/*.spec.ts"],
-  "typeRoots": ["../node_modules/@types"]
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "./src/**/*.spec.ts"
+  ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ]
 }
