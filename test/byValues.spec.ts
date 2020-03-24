@@ -181,24 +181,24 @@ describe("ByValues sorting desc", () => {
     ];
 
     const currentArraySorted = [
-      {prop: "aaa", att: 2},
       {prop: "aaa", att: undefined},
-      {prop: "bbb", att: 3},
       {prop: "ccc", att: 0},
+      {prop: "aaa", att: 2},
       {prop: null, att: 3},
+      {prop: "bbb", att: 3},
     ];
 
     const arraySorted = currentArrayUnsorted.sort(
       byValues({
-        att: byNumber({}),
-        prop: byString(),
+        att: byNumber({nullable: true}),
+        prop: byString({nullable: true}),
       }));
 
     const [first, last] = getFirstAndLast(arraySorted);
 
-    expectObjectToBeEquals(first, {prop: "ccc", att: 0});
+    expectObjectToBeEquals(first.prop, "aaa");
 
-    expectObjectToBeEquals(last, {prop: null, att: 3});
+    expectObjectToBeEquals(last.att, 3);
 
     expectObjectToBeEquals(arraySorted, currentArraySorted);
   });

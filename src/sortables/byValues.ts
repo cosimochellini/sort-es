@@ -8,6 +8,8 @@ const byValues = <T, K extends T>(obj: SortableObject<T, K>): sortable<K> => {
 
       const sortableFn = obj[key];
 
+      if (!sortableFn) continue;
+
       const sortResult = sortableFn(first[key], second[key]);
 
       if (sortResult !== 0) return sortResult;
