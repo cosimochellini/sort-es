@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/cosimochellini/sort-es/compare/v0.3.2...v0.3.3) (2020-03-24)
+
+
+### Features
+
+* **tests:** added test for byValues ([39b76fe](https://github.com/cosimochellini/sort-es/commit/39b76fe12b1817c5f18f579c15f729d3c5d6b6c3))
+
+
+### Bug Fixes
+
+* **dependency:** updated dependency ([63e6ccd](https://github.com/cosimochellini/sort-es/commit/63e6ccdb3dc398ac269638d3e952fd8fb4f51e0e))
+* **dependency:** updated dependency ([9bcb4f9](https://github.com/cosimochellini/sort-es/commit/9bcb4f9efc24b981874569066b7f6268645d303d))
+* **test:** fixed some small test ([6331ecf](https://github.com/cosimochellini/sort-es/commit/6331ecfdc21096431fbcf3f797c2e0f16847d524))
+
 ### [0.3.2](https://github.com/cosimochellini/sort-es/compare/v0.2.13...v0.3.2) (2020-03-17)
 
 
