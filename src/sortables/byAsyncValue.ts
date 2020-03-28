@@ -1,4 +1,4 @@
-import { sortable } from "../types/types";
+import {sortable} from "../types/types";
 
 const sortAsync = async <T>(
   asyncItems: Promise<T>[],
@@ -20,4 +20,5 @@ export class AsyncArray<T> extends Array<Promise<T>> {
     return items.sort(sortFn);
   }
 }
+
 export default sortAsync;
