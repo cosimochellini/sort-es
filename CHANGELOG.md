@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/cosimochellini/sort-es/compare/v0.3.3...v0.3.4) (2020-03-28)
+
+
+### Features
+
+* **types:** simplified some types for a better autocomplete ([466f10b](https://github.com/cosimochellini/sort-es/commit/466f10b19804f5bbbe788d2cee2e7a18e8eaa11e))
+
 ### [0.3.3](https://github.com/cosimochellini/sort-es/compare/v0.3.2...v0.3.3) (2020-03-24)
 
 
