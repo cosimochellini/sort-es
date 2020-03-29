@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.4](https://github.com/cosimochellini/sort-es/compare/v0.3.4...v0.6.4) (2020-03-29)
+
+
+### Features
+
+* **bundle:** changed the structure of the exported file for a better intellisense ([ee736e4](https://github.com/cosimochellini/sort-es/commit/ee736e43ea7271142b993583db305a316001b84b))
+
+
+### Bug Fixes
+
+* **version:** updated version ([5562c40](https://github.com/cosimochellini/sort-es/commit/5562c40a8ea9b16475693aef0a8be12f240ff3db))
+
 ### [0.3.4](https://github.com/cosimochellini/sort-es/compare/v0.3.3...v0.3.4) (2020-03-28)
 
 
