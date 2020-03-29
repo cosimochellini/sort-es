@@ -1,52 +1,22 @@
 {
   "name": "sort-es",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
   "scripts": {
-    "clean": "rm dist",
-    "build": "yarn lint && tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
-    "build:stats": "(echo '\\033[35;3m' ; cd dist && ls -lh index*js index*gz | tail -n +2 | awk '{print $5,$9}')",
-    "bundle:esm": "rollup dist/index.js --file dist/index.mjs --format esm",
-    "bundle:esm:min": "terser --ecma 6 --compress --mangle --module -o dist/index.min.mjs -- dist/index.mjs",
-    "bundle:umd": "rollup dist/index.js --file dist/index.umd.js --format umd --name sort",
-    "bundle:umd:min": "terser --ecma 6 --compress --mangle -o dist/index.umd.min.js -- dist/index.umd.js",
+    "build": "rollup -c --compact && tsc",
     "test": "nyc --reporter=lcov mocha --recursive --require ts-node/register --exit test/**/*.ts",
     "test:local": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
     "lint": "eslint src/*.ts",
-    "build-ci": "tsc --project tsconfig.build.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
+    "build-ci": "tsc --project tsconfig.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
     "release": "standard-version",
     "codecov": "codecov"
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "nyc": {
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "exclude": [
-      "**/*.d.ts"
-    ],
-    "reporter": [
-      "html"
-    ],
-    "all": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "main": "dist/index.js",
-  "module": "dist/index.min.mjs",
-  "unpkg": "dist/index.umd.min.js",
+  "module": "dist/index.mjs",
+  "umd": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "repository": {
     "type": "git",
@@ -92,20 +62,48 @@
     "date-fns": "^2.11.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "mocha": "^7.1.1",
     "nyc": "^15.0.0",
+    "parcel": "^1.12.4",
     "rollup": "^2.2.0",
-    "sort-es": "^0.3.3",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "sort-es": "^0.6.1",
     "source-map-support": "^0.5.16",
     "terser": "^4.6.7",
+    "ts-loader": "^6.2.2",
     "ts-node": "^8.8.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }

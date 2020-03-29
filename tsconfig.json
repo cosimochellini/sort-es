@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
+    "module": "ESNext",
     "baseUrl": ".",
+    "declaration": true,
+    "outDir": "dist",
     "paths": {
       "*": [
         "*",
         "dist/*"
       ]
     },
-    "target": "es6",
+    "target": "ES5",
     "lib": [
-      "dom",
       "es2017",
       "es2018.promise",
       "es2019"
