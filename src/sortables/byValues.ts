@@ -1,12 +1,12 @@
 import {sortable, SortableObject} from "../types/types";
 
-const byValues = <T>(obj: SortableObject<T>): sortable<T> => {
+const byValues = <T>(sorter: SortableObject<T>): sortable<T> => {
   return (first: T, second: T): number => {
-    for (const key in obj) {
+    for (const key in sorter) {
 
-      if (!Object.prototype.hasOwnProperty.call(obj, key)) continue;
+      if (!Object.prototype.hasOwnProperty.call(sorter, key)) continue;
 
-      const sortableFn = obj[key];
+      const sortableFn = sorter[key];
 
       if (!sortableFn) continue;
 

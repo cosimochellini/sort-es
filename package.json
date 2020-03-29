@@ -1,6 +1,6 @@
 {
   "name": "sort-es",
-  "version": "0.3.4",
+  "version": "0.6.1",
   "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
   "scripts": {
     "clean": "rm dist",
@@ -66,7 +66,9 @@
     "module",
     "node",
     "javascript",
-    "typescript"
+    "typescript",
+    "array",
+    "list"
   ],
   "author": "Cosimo Chellini <cosimo.chellini@gmail.com>",
   "license": "MIT",
