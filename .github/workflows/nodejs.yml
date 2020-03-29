@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
-      - run: yarn build-ci
+      - run: yarn build
       - run: yarn codecov
       - run: yarn publish --access public
         env:
