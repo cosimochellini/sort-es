@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.5](https://github.com/cosimochellini/sort-es/compare/v0.6.4...v0.6.5) (2020-04-12)
+
+
+### Features
+
+* **side-effects:** explicited removed siteEffects ([8ff114c](https://github.com/cosimochellini/sort-es/commit/8ff114c741d7d67888f0876d351e8670b7342ed0))
+
+
+### Bug Fixes
+
+* **ci:** fixed build ci for npm ([033cfcb](https://github.com/cosimochellini/sort-es/commit/033cfcb13f8ced13176c23f270a7cc66413105aa))
+* **ci:** fixed ci deployment and test ([94fe5fe](https://github.com/cosimochellini/sort-es/commit/94fe5fe2749649ffd8b71a193a9bbde9b9f2a964))
+
 ### [0.6.4](https://github.com/cosimochellini/sort-es/compare/v0.3.4...v0.6.4) (2020-03-29)
 
 
