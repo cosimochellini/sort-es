@@ -1,27 +1,61 @@
 {
-  "name": "sort-es",
-  "version": "0.6.4",
-  "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
-  "scripts": {
-    "build": "rollup -c --compact && tsc",
-    "test": "nyc --reporter=lcov mocha --recursive --require ts-node/register --exit test/**/*.ts",
-    "test:local": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
-    "lint": "eslint src/*.ts",
-    "build-ci": "tsc --project tsconfig.json && yarn bundle:esm && yarn bundle:esm:min && yarn bundle:umd && yarn bundle:umd:min && yarn build:stats",
-    "release": "standard-version",
-    "codecov": "codecov"
+  "author": "Cosimo Chellini <cosimo.chellini@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/cosimochellini/sort-es/issues"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "umd": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {},
+  "description": "Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array in less than 1 KB!",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.2",
+    "@types/chai": "^4.2.10",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "codecov": "^3.6.5",
+    "cosmiconfig": "^6.0.0",
+    "cross-env": "^7.0.2",
+    "date-fns": "^2.12.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "parcel": "^1.12.4",
+    "rollup": "^2.6.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "sort-es": "^0.6.1",
+    "source-map-support": "^0.5.16",
+    "terser": "^4.6.11",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
   "files": [
-    "dist/**/*"
+    "lib/**/*"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cosimochellini/sort-es.git"
+  "homepage": "https://sort-es.netlify.com",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "keywords": [
     "sort",
@@ -41,53 +75,10 @@
     "array",
     "list"
   ],
-  "author": "Cosimo Chellini <cosimo.chellini@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cosimochellini/sort-es/issues"
-  },
-  "homepage": "https://sort-es.netlify.com",
-  "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@types/chai": "^4.2.10",
-    "@types/mocha": "^7.0.2",
-    "@types/node": "^13.9.5",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "babel-eslint": "^10.1.0",
-    "chai": "^4.2.0",
-    "codecov": "^3.6.5",
-    "cosmiconfig": "^6.0.0",
-    "cross-env": "^7.0.2",
-    "date-fns": "^2.11.1",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "husky": "^4.2.3",
-    "mocha": "^7.1.1",
-    "nyc": "^15.0.0",
-    "parcel": "^1.12.4",
-    "rollup": "^2.2.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-typescript2": "^0.27.0",
-    "sort-es": "^0.6.1",
-    "source-map-support": "^0.5.16",
-    "terser": "^4.6.7",
-    "ts-loader": "^6.2.2",
-    "ts-node": "^8.8.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.3"
-  },
-  "dependencies": {},
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "name": "sort-es",
   "nyc": {
     "extension": [
       ".ts",
@@ -101,10 +92,19 @@
     ],
     "all": true
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosimochellini/sort-es.git"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.ts",
+    "test": "nyc --reporter=lcov mocha --recursive --require  ts-node/register --exit test/**/*.ts",
+    "test:local": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
+    "lint": "eslint src/*.ts",
+    "release": "standard-version",
+    "codecov": "codecov"
+  },
+  "sideEffects": false,
+  "types": "lib/src",
+  "version": "0.6.4"
 }

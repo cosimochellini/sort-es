@@ -1,42 +1,42 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "dist",
-    "paths": {
-      "*": [
-        "*",
-        "dist/*"
-      ]
-    },
-    "target": "ES5",
+    "declarationDir": "lib/types",
+    "esModuleInterop": true,
+    "importHelpers": true,
     "lib": [
       "es2017",
-      "es2018.promise",
       "es2019"
     ],
-    "strict": true,
+    "module": "CommonJS",
     "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": false,
-    "noImplicitThis": true,
+    "outDir": "lib",
+    "paths": {
+      "*": [
+        "*"
+      ]
+    },
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
     "strictNullChecks": false,
-    "importHelpers": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "sourceMap": true
+    "target": "ESNext"
   },
-  "include": [
-    "**/*.ts"
-  ],
   "exclude": [
     "node_modules",
-    "dist",
+    "lib",
     "./src/**/*.spec.ts"
+  ],
+  "include": [
+    "**/*.ts"
   ],
   "typeRoots": [
     "../node_modules/@types"

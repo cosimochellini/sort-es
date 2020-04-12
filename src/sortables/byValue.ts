@@ -1,25 +1,22 @@
 import {sortable} from "../types/types";
 
-const getValueByDiscriminator = <T, TPropType>(
+const getValueByDiscriminator = <T, K extends keyof T>(
   obj: T,
-  discriminator: string | ((item: T) => TPropType)
-): TPropType => {
-  return typeof discriminator === "string"
-    ? obj[discriminator]
-    : discriminator(obj);
+  discriminator: K | ((item: T) => T[K])
+): T[K] => {
+  return typeof discriminator === "function"
+    ? discriminator(obj)
+    : obj[discriminator]
 };
 
-const byValue = <T, TPropType>(
-  discriminator: string | ((item: T) => TPropType),
-  sortFn: sortable<TPropType>
+const byValue = <T, K extends keyof T>(
+  discriminator: K | ((item: T) => T[K]),
+  sortFn: sortable<T[K]>
 ): sortable<T> => {
   return (first: T, second: T): number => {
-    const firstItem: TPropType = getValueByDiscriminator(first, discriminator);
+    const firstItem: T[K] = getValueByDiscriminator(first, discriminator);
 
-    const secondItem: TPropType = getValueByDiscriminator(
-      second,
-      discriminator
-    );
+    const secondItem: T[K] = getValueByDiscriminator(second,discriminator);
 
     return sortFn(firstItem, secondItem);
   };

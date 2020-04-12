@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "lib/types",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "ESNext"
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "./src/**/*.spec.ts"
+  ],
+  "include": [
+    "**/*.ts"
+  ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ]
+}
