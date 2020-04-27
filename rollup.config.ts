@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
+// noinspection JSUnusedGlobalSymbols
 export default {
   input: "src/index.ts",
   output: [

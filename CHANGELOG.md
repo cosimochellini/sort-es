@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **side-effects:** explicited removed siteEffects ([8ff114c](https://github.com/cosimochellini/sort-es/commit/8ff114c741d7d67888f0876d351e8670b7342ed0))
+* **side effects:** explained removed siteEffects ([8ff114c](https://github.com/cosimochellini/sort-es/commit/8ff114c741d7d67888f0876d351e8670b7342ed0))
 
 
 ### Bug Fixes
@@ -96,7 +96,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * 1 more test ([1ddc046](https://github.com/cosimochellini/sort-es/commit/1ddc04657905ae94ffeeec1bf51e462ebbd6c38e))
-* bumped version ([1e0c2a0](https://github.com/cosimochellini/sort-es/commit/1e0c2a069309ae9d398d7e67b6f8e04d11c77154))
+* a bumped version ([1e0c2a0](https://github.com/cosimochellini/sort-es/commit/1e0c2a069309ae9d398d7e67b6f8e04d11c77154))
 * f ([e63cef2](https://github.com/cosimochellini/sort-es/commit/e63cef28c51fc46b974409f0e16f67e1a5eb78ab))
 * test ([c7715f9](https://github.com/cosimochellini/sort-es/commit/c7715f968f15d3ef4f52d65a1e14d8c2c4dac586))
 

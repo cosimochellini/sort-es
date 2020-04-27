@@ -61,7 +61,7 @@ Use directly in the browser
 </script>
 ```
 
-## Some mind blowing example
+## Some mind-blowing example
 **sort by a single property**
 ```javascript
 //js or ts file
