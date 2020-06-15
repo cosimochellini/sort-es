@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.9](https://github.com/cosimochellini/sort-es/compare/v0.6.8...v0.6.9) (2020-06-15)
+
+
+### Bug Fixes
+
+* **dependency:** updated depenency 1506 ([3959d89](https://github.com/cosimochellini/sort-es/commit/3959d89d9581f21cb6e59cd8091933dd0387a8c7))
+
 ### [0.6.8](https://github.com/cosimochellini/sort-es/compare/v0.6.7...v0.6.8) (2020-05-31)
 
 
