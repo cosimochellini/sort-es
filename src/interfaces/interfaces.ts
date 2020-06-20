@@ -5,8 +5,12 @@ interface SortOption {
   nullable?: boolean;
 }
 
+interface SortByStringOption extends SortOption {
+  lowercase?: boolean
+}
+
 interface SortByDateOption extends SortOption {
   customParser?: (item: datable) => Date;
 }
 
-export {SortOption, SortByDateOption};
+export {SortOption, SortByStringOption, SortByDateOption};

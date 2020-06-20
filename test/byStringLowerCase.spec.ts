@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import { byStringLowerCase } from "../src/index";
+import { byString } from "../src/index";
 import { getFirstAndLast, reverse } from "./utils/sort";
 import { expectObjectToBeEquals } from "./utils/expectFns";
 
@@ -9,7 +9,7 @@ const correctArraySorted = ["AAA", "aaB", "aAc", "ccA", "cccc"];
 
 describe("ByStringLowerCase sorting", () => {
   it("Does sort an array by string in lowercase", () => {
-    const arraySorted = arrayUnsorted.sort(byStringLowerCase());
+    const arraySorted = arrayUnsorted.sort(byString());
 
     const [first, last] = getFirstAndLast(arraySorted);
 
@@ -23,7 +23,7 @@ describe("ByStringLowerCase sorting", () => {
 
 describe("ByString sorting desc", () => {
   it("Does sort an array by string descending in lowercase", () => {
-    const arraySorted = arrayUnsorted.sort(byStringLowerCase({ desc: true }));
+    const arraySorted = arrayUnsorted.sort(byString({ desc: true }));
 
     const [first, last] = getFirstAndLast(arraySorted);
 
