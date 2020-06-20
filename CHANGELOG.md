@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/cosimochellini/sort-es/compare/v1.0.0...v1.1.0) (2020-06-20)
+
+
+### Features
+
+* **mergedByStringSortables:** merged byStringLowerCase in byString ([bcf5ba7](https://github.com/cosimochellini/sort-es/commit/bcf5ba71dca84708a88650af280157827177f410))
+
 ## [1.0.0](https://github.com/cosimochellini/sort-es/compare/v0.6.9...v1.0.0) (2020-06-20)
 
 ### [0.6.10](https://github.com/cosimochellini/sort-es/compare/v0.6.9...v0.6.10) (2020-06-20)
