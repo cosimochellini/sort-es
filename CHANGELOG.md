@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/cosimochellini/sort-es/compare/v1.1.1...v1.1.4) (2020-09-18)
+
+
+### Features
+
+* **dependency:** updated dependency ([c713cfd](https://github.com/cosimochellini/sort-es/commit/c713cfdb9bbe96cdb67df212fe902491d53659aa))
+
+
+### Bug Fixes
+
+* **dependency:** updated dependecy ([dd59ae8](https://github.com/cosimochellini/sort-es/commit/dd59ae8a489cb9f3ab4453b0b570deed6e0f67f8))
+* **dependency:** updated dependency 0509 (TypeScript V4) ([fbbf7f5](https://github.com/cosimochellini/sort-es/commit/fbbf7f59d37f98c925246c4181a85e92404b5813))
+* **dependency:** updated dependency 1308 ([424b508](https://github.com/cosimochellini/sort-es/commit/424b508e0873e7e2bf21f316de4169d79cde0dfe))
+* **dependency:** updated dependency 2507 ([8bf22ee](https://github.com/cosimochellini/sort-es/commit/8bf22eed8b9140d7dcf4facc4b2e38e0e23e240d))
+
 ## [1.1.2](https://github.com/cosimochellini/sort-es/compare/v1.1.1...v1.1.2) (2020-09-05)
 
 
