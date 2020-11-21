@@ -1,4 +1,4 @@
-import {datable} from '../types/types'
+import { datable } from "../types/types";
 
 interface SortOption {
   desc?: boolean;
@@ -6,11 +6,11 @@ interface SortOption {
 }
 
 interface SortByStringOption extends SortOption {
-  lowercase?: boolean
+  lowercase?: boolean;
 }
 
 interface SortByDateOption extends SortOption {
   customParser?: (item: datable) => Date;
 }
 
-export {SortOption, SortByStringOption, SortByDateOption};
+export { SortOption, SortByStringOption, SortByDateOption };

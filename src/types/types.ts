@@ -8,4 +8,4 @@ type SortableObject<T> = {
   [key in keyof T]?: sortable<T[key]>;
 };
 
-export {sortable, sortableWithOption, datable, SortableObject};
+export { sortable, sortableWithOption, datable, SortableObject };

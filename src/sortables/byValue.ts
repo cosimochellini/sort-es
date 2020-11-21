@@ -1,4 +1,4 @@
-import {sortable} from "../types/types";
+import { sortable } from "../types/types";
 
 const getValueByDiscriminator = <T, K extends keyof T>(
   obj: T,
@@ -6,7 +6,7 @@ const getValueByDiscriminator = <T, K extends keyof T>(
 ): T[K] => {
   return typeof discriminator === "function"
     ? discriminator(obj)
-    : obj[discriminator]
+    : obj[discriminator];
 };
 
 const byValue = <T, K extends keyof T>(
@@ -16,7 +16,7 @@ const byValue = <T, K extends keyof T>(
   return (first: T, second: T): number => {
     const firstItem: T[K] = getValueByDiscriminator(first, discriminator);
 
-    const secondItem: T[K] = getValueByDiscriminator(second,discriminator);
+    const secondItem: T[K] = getValueByDiscriminator(second, discriminator);
 
     return sortFn(firstItem, secondItem);
   };
