@@ -1,8 +1,8 @@
 import "mocha";
-import {expect} from "chai";
-import {byAny} from "../src/index";
-import {getFirstAndLast, reverse} from "./utils/sort";
-import {expectObjectToBeEquals} from "./utils/expectFns";
+import { expect } from "chai";
+import { byAny } from "../src/index";
+import { getFirstAndLast, reverse } from "./utils/sort";
+import { expectObjectToBeEquals } from "./utils/expectFns";
 
 const arrayUnsortedOfNumber = [44, 12, 34, 124, 21.5];
 const correctArraySortedOfNumber = [12, 21.5, 34, 44, 124];
@@ -25,7 +25,7 @@ describe("ByAny sorting a list of number", function () {
 
 describe("ByAny sorting desc", function () {
   it("Does sort an array by number descending", function () {
-    const arraySorted = arrayUnsortedOfNumber.sort(byAny({desc: true}));
+    const arraySorted = arrayUnsortedOfNumber.sort(byAny({ desc: true }));
 
     const [first, last] = getFirstAndLast(arraySorted);
 
@@ -36,7 +36,6 @@ describe("ByAny sorting desc", function () {
     expectObjectToBeEquals(arraySorted, reverse(correctArraySortedOfNumber));
   });
 });
-
 
 describe("ByString sorting", function () {
   it("Does sort an array by string", function () {
@@ -54,7 +53,7 @@ describe("ByString sorting", function () {
 
 describe("ByString sorting desc", function () {
   it("Does sort an array by string descending", function () {
-    const arraySorted = arrayUnsortedOfString.sort(byAny({desc: true}));
+    const arraySorted = arrayUnsortedOfString.sort(byAny({ desc: true }));
 
     const [first, last] = getFirstAndLast(arraySorted);
 

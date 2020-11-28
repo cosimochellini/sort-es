@@ -1,25 +1,36 @@
 import { sortable } from "../types/types";
 
-const getValueByDiscriminator = <T, K extends keyof T>(
-  obj: T,
-  discriminator: K | ((item: T) => T[K])
-): T[K] => {
-  return typeof discriminator === "function"
-    ? discriminator(obj)
-    : obj[discriminator];
-};
-
-const byValue = <T, K extends keyof T>(
-  discriminator: K | ((item: T) => T[K]),
+function byValue<T, K extends keyof T>(
+  discriminator: K,
   sortFn: sortable<T[K]>
-): sortable<T> => {
+): sortable<T>;
+
+function byValue<T, TReturn>(
+  discriminator: (item: T) => TReturn,
+  sortFn: sortable<TReturn>
+): sortable<T>;
+
+function byValue<T, K extends keyof T, TResult>(
+  discriminator: K | ((item: T) => TResult),
+  sortFn: sortable<T[K]> | sortable<TResult>
+): sortable<T> {
+  if (typeof discriminator === "function") {
+    return (first: T, second: T): number => {
+      const firstItem: TResult = discriminator(first);
+
+      const secondItem: TResult = discriminator(second);
+
+      return (sortFn as sortable<TResult>)(firstItem, secondItem);
+    };
+  }
+
   return (first: T, second: T): number => {
-    const firstItem: T[K] = getValueByDiscriminator(first, discriminator);
+    const firstItem: T[K] = first[discriminator];
 
-    const secondItem: T[K] = getValueByDiscriminator(second, discriminator);
+    const secondItem: T[K] = second[discriminator];
 
-    return sortFn(firstItem, secondItem);
+    return (sortFn as sortable<T[K]>)(firstItem, secondItem);
   };
-};
+}
 
 export default byValue;
