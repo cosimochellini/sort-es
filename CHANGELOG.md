@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/cosimochellini/sort-es/compare/v1.1.7...v1.1.8) (2020-11-28)
+
+
+### Features
+
+* **sortables:** fixed the type of byAny and byValue ([6b9de24](https://github.com/cosimochellini/sort-es/commit/6b9de24a1b8728803309ea525c034a835148ddda))
+
 ### [1.1.7](https://github.com/cosimochellini/sort-es/compare/v1.1.6...v1.1.7) (2020-11-21)
 
 
