@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.9](https://github.com/cosimochellini/sort-es/compare/v1.1.8...v1.1.9) (2020-12-12)
+
+
+### Bug Fixes
+
+* **dependency:** updated dependency + fix nyc report ([bf3dc79](https://github.com/cosimochellini/sort-es/commit/bf3dc799ad59740d9560e8c416e6e2aceab307de))
+
 ### [1.1.8](https://github.com/cosimochellini/sort-es/compare/v1.1.7...v1.1.8) (2020-11-28)
 
 
