@@ -1,6 +1,22 @@
-import { sortable, SortableObject } from "../types/types";
+import { sortable, SortableTuple, SortableObject } from "../types/types";
 
-const byValues = <T>(sorter: SortableObject<T>): sortable<T> => {
+function byValues<T>(sorter: SortableObject<T>): sortable<T>;
+
+function byValues<T>(sorter: SortableTuple<T>[]): sortable<T>;
+
+function byValues<T>(
+  sorter: SortableObject<T> | SortableTuple<T>[]
+): sortable<T> {
+  if (Array.isArray(sorter)) {
+    return (first: T, second: T): number => {
+      for (const [prop, sortableFn] of sorter) {
+        const sortResult = sortableFn(first[prop], second[prop]);
+
+        if (sortResult !== 0) return sortResult;
+      }
+      return 0;
+    };
+  }
   return (first: T, second: T): number => {
     for (const key in sorter) {
       if (!Object.prototype.hasOwnProperty.call(sorter, key)) continue;
@@ -15,6 +31,6 @@ const byValues = <T>(sorter: SortableObject<T>): sortable<T> => {
     }
     return 0;
   };
-};
+}
 
 export default byValues;
