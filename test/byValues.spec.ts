@@ -231,6 +231,10 @@ describe("ByValues sorting, array method option", () => {
       ])
     );
 
+    const arraySortedDeprecated = currentUnsorted.sort(
+      byValues({ "1": byNumber(), prop: byString() })
+    );
+
     const [first, last] = getFirstAndLast(arraySorted);
 
     expectObjectToBeEquals(first, { prop: "aaa", 1: 2 });
