@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/cosimochellini/sort-es/compare/v1.1.11...v1.2.0) (2021-02-14)
+
+
+### Bug Fixes
+
+* **badge:** small changes ([4cfa21d](https://github.com/cosimochellini/sort-es/commit/4cfa21d9cc7f3ff6dbc365c5fb17e09fc991c8ed))
+* **by-values:** added a propper way to handle sorting of an object with number as property name ([8274b37](https://github.com/cosimochellini/sort-es/commit/8274b37cc5a11bce50f93c8455018eb44246f553)), closes [#6](https://github.com/cosimochellini/sort-es/issues/6)
+* **by-values:** added deprecation error ([48a7400](https://github.com/cosimochellini/sort-es/commit/48a7400c06d8bcfaf65a4926b2a67b24941dcb3b))
+* **by-values:** set the array-like props as default signature ([e5890af](https://github.com/cosimochellini/sort-es/commit/e5890afb67fe53075e4529f6bead61e074bf15f4)), closes [#6](https://github.com/cosimochellini/sort-es/issues/6)
+
 ### [1.1.11](https://github.com/cosimochellini/sort-es/compare/v1.1.10...v1.1.11) (2021-01-30)
 
 

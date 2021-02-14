@@ -32,7 +32,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
-    "husky": "^5.0.9",
+    "husky": "^4.3.8",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
     "parcel": "^1.12.4",
@@ -106,5 +106,5 @@
   },
   "sideEffects": false,
   "types": "lib/src",
-  "version": "1.1.11"
+  "version": "1.2.0"
 }
