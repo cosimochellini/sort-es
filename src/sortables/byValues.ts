@@ -1,11 +1,11 @@
 import { sortable, SortableTuple, SortableObject } from "../types/types";
 
+function byValues<T>(sorter: SortableTuple<T>[]): sortable<T>;
+
 /**
  * @deprecated do not pass the sorter for the byValue as object, use the `sorter: SortableTuple<T>[]`
  */
 function byValues<T>(sorter: SortableObject<T>): sortable<T>;
-
-function byValues<T>(sorter: SortableTuple<T>[]): sortable<T>;
 
 function byValues<T>(
   sorter: SortableObject<T> | SortableTuple<T>[]

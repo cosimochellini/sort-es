@@ -224,15 +224,12 @@ describe("ByValues sorting, array method option", () => {
       { prop: "ccc", 1: 3 },
       { prop: "ccc", 1: 3 },
     ];
+
     const arraySorted = currentUnsorted.sort(
       byValues([
         ["prop", byString()],
         [1, byNumber()],
       ])
-    );
-
-    const arraySortedDeprecated = currentUnsorted.sort(
-      byValues({ "1": byNumber(), prop: byString() })
     );
 
     const [first, last] = getFirstAndLast(arraySorted);
