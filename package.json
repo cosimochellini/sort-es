@@ -106,5 +106,5 @@
   },
   "sideEffects": false,
   "types": "lib/src",
-  "version": "1.2.0"
+  "version": "1.2.1"
 }

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/cosimochellini/sort-es/compare/v1.2.0...v1.2.1) (2021-03-07)
+
+
+### Bug Fixes
+
+* **dep:** changed husky version ([caf43f8](https://github.com/cosimochellini/sort-es/commit/caf43f8ec3e3105b99352c0b88a11228650327ab))
+* **dep:** updated ts version to 4.2.3 ([185af38](https://github.com/cosimochellini/sort-es/commit/185af3840a2338a0d48f758f93c5016e8c079576))
+
 ## [1.2.0](https://github.com/cosimochellini/sort-es/compare/v1.1.11...v1.2.0) (2021-02-14)
 
 
