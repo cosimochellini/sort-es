@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/cosimochellini/sort-es/compare/v1.2.1...v1.3.0) (2021-03-20)
+
+
+### Features
+
+* **byBoolean:** added byBoolean sortable ([8861c8f](https://github.com/cosimochellini/sort-es/commit/8861c8fe50f8527478f1e002d0e630b99cc9a829))
+
+
+### Bug Fixes
+
+* **dependency:** updated depedency ([2f59b0a](https://github.com/cosimochellini/sort-es/commit/2f59b0a8a160668a7ab9e359eab06e74339a64c1))
+* **typo:** removed some typo ([05fb201](https://github.com/cosimochellini/sort-es/commit/05fb201d08fefb438c3ddbbc471679d10a1abb24))
+
 ### [1.2.1](https://github.com/cosimochellini/sort-es/compare/v1.2.0...v1.2.1) (2021-03-07)
 
 
