@@ -2,7 +2,8 @@ import { sortable } from "../types/types";
 
 /**
  * the sortable for the async values
- * @param options sortable options for sortAsync
+ * @param asyncItems the async items
+ * @param sortFn the sortable to apply to the async items
  *
  * {@link https://sort-es.netlify.app/by-async sortAsync docs}
  * @version 1.0.0

@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * **badge:** small changes ([4cfa21d](https://github.com/cosimochellini/sort-es/commit/4cfa21d9cc7f3ff6dbc365c5fb17e09fc991c8ed))
-* **by-values:** added a propper way to handle sorting of an object with number as property name ([8274b37](https://github.com/cosimochellini/sort-es/commit/8274b37cc5a11bce50f93c8455018eb44246f553)), closes [#6](https://github.com/cosimochellini/sort-es/issues/6)
+* **by-values:** added a proper way to handle sorting of an object with number as property name ([8274b37](https://github.com/cosimochellini/sort-es/commit/8274b37cc5a11bce50f93c8455018eb44246f553)), closes [#6](https://github.com/cosimochellini/sort-es/issues/6)
 * **by-values:** added deprecation error ([48a7400](https://github.com/cosimochellini/sort-es/commit/48a7400c06d8bcfaf65a4926b2a67b24941dcb3b))
 * **by-values:** set the array-like props as default signature ([e5890af](https://github.com/cosimochellini/sort-es/commit/e5890afb67fe53075e4529f6bead61e074bf15f4)), closes [#6](https://github.com/cosimochellini/sort-es/issues/6)
 
@@ -79,7 +79,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **dependency:** updated dependecy ([dd59ae8](https://github.com/cosimochellini/sort-es/commit/dd59ae8a489cb9f3ab4453b0b570deed6e0f67f8))
+* **dependency:** updated dependency ([dd59ae8](https://github.com/cosimochellini/sort-es/commit/dd59ae8a489cb9f3ab4453b0b570deed6e0f67f8))
 * **dependency:** updated dependency 0509 (TypeScript V4) ([fbbf7f5](https://github.com/cosimochellini/sort-es/commit/fbbf7f59d37f98c925246c4181a85e92404b5813))
 * **dependency:** updated dependency 1308 ([424b508](https://github.com/cosimochellini/sort-es/commit/424b508e0873e7e2bf21f316de4169d79cde0dfe))
 * **dependency:** updated dependency 2507 ([8bf22ee](https://github.com/cosimochellini/sort-es/commit/8bf22eed8b9140d7dcf4facc4b2e38e0e23e240d))
@@ -115,21 +115,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **dependency:** updated depenency 1506 ([3959d89](https://github.com/cosimochellini/sort-es/commit/3959d89d9581f21cb6e59cd8091933dd0387a8c7))
+* **dependency:** updated dependency 1506 ([3959d89](https://github.com/cosimochellini/sort-es/commit/3959d89d9581f21cb6e59cd8091933dd0387a8c7))
 
 ### [0.6.8](https://github.com/cosimochellini/sort-es/compare/v0.6.7...v0.6.8) (2020-05-31)
 
 
 ### Bug Fixes
 
-* **dedendencies:** updated dependency 3105 ([79e321d](https://github.com/cosimochellini/sort-es/commit/79e321d0ab708c4e8dc794c01d4dea7f5cbf3070))
+* **dependencies:** updated dependency 3105 ([79e321d](https://github.com/cosimochellini/sort-es/commit/79e321d0ab708c4e8dc794c01d4dea7f5cbf3070))
 
 ### [0.6.7](https://github.com/cosimochellini/sort-es/compare/v0.6.6...v0.6.7) (2020-05-11)
 
 
 ### Bug Fixes
 
-* **dependency:** updated depenency 1105 ([249d75c](https://github.com/cosimochellini/sort-es/commit/249d75c7e31076f428dd5639d5949c78aafdc058))
+* **dependency:** updated dependency 1105 ([249d75c](https://github.com/cosimochellini/sort-es/commit/249d75c7e31076f428dd5639d5949c78aafdc058))
 
 ### [0.6.6](https://github.com/cosimochellini/sort-es/compare/v0.6.5...v0.6.6) (2020-04-27)
 
@@ -137,7 +137,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * **dependency:** updated dependency ([fa33b68](https://github.com/cosimochellini/sort-es/commit/fa33b68da43bb5db4fa96e1a5e53616cb2d973ac))
-* **dev-devendency:** updated dependency 2704 ([15459d8](https://github.com/cosimochellini/sort-es/commit/15459d8d7a3a91b081c2904f672d9b1804b41456))
+* **dev-dependency:** updated dependency 2704 ([15459d8](https://github.com/cosimochellini/sort-es/commit/15459d8d7a3a91b081c2904f672d9b1804b41456))
 
 ### [0.6.5](https://github.com/cosimochellini/sort-es/compare/v0.6.4...v0.6.5) (2020-04-12)
 
