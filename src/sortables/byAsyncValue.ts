@@ -1,5 +1,12 @@
 import { sortable } from "../types/types";
 
+/**
+ * the sortable for the async values
+ * @param options sortable options for sortAsync
+ *
+ * {@link https://sort-es.netlify.app/by-async sortAsync docs}
+ * @version 1.0.0
+ */
 const sortAsync = async <T>(
   asyncItems: Promise<T>[],
   sortFn: sortable<T>

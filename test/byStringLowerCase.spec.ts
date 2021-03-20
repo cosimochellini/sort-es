@@ -9,7 +9,7 @@ const correctArraySorted = ["AAA", "aaB", "aAc", "ccA", "cccc"];
 
 describe("ByStringLowerCase sorting", () => {
   it("Does sort an array by string in lowercase", () => {
-    const arraySorted = arrayUnsorted.sort(byString());
+    const arraySorted = arrayUnsorted.sort(byString({ lowercase: true }));
 
     const [first, last] = getFirstAndLast(arraySorted);
 
@@ -23,7 +23,9 @@ describe("ByStringLowerCase sorting", () => {
 
 describe("ByString sorting desc", () => {
   it("Does sort an array by string descending in lowercase", () => {
-    const arraySorted = arrayUnsorted.sort(byString({ desc: true }));
+    const arraySorted = arrayUnsorted.sort(
+      byString({ lowercase: true, desc: true })
+    );
 
     const [first, last] = getFirstAndLast(arraySorted);
 

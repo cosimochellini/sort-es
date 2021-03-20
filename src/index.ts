@@ -1,10 +1,11 @@
+import byAny from "./sortables/byAny";
 import byDate from "./sortables/byDate";
 import byValue from "./sortables/byValue";
+import byValues from "./sortables/byValues";
 import byString from "./sortables/byString";
 import byNumber from "./sortables/byNumber";
+import byBoolean from "./sortables/byBoolean";
 import sortAsync, { AsyncArray } from "./sortables/byAsyncValue";
-import byValues from "./sortables/byValues";
-import byAny from "./sortables/byAny";
 
 export default {
   byAny,
@@ -14,6 +15,7 @@ export default {
   byString,
   byNumber,
   sortAsync,
+  byBoolean,
   AsyncArray,
 };
 
@@ -25,5 +27,6 @@ export {
   byString,
   byNumber,
   sortAsync,
+  byBoolean,
   AsyncArray,
 };

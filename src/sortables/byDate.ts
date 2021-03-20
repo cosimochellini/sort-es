@@ -8,6 +8,13 @@ const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
   return parser(date);
 };
 
+/**
+ * the sortable for the date values
+ * @param options sortable options for byDate
+ *
+ * {@link https://sort-es.netlify.app/by-date byDate docs}
+ * @version 1.0.0
+ */
 const byDate: sortableWithOption<datable, SortByDateOption> = (
   options: SortByDateOption = {
     desc: false,

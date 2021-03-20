@@ -10,6 +10,13 @@ const fixString = (value: string, options: SortByStringOption) => {
   return value;
 };
 
+/**
+ * the sortable to sort the **string primitive**
+ * @param options the options to sort the strings correctly
+ *
+ * {@link https://sort-es.netlify.app/by-string byString docs}
+ * @version 1.0.0
+ */
 const byString: sortableWithOption<string, SortByStringOption> = (
   options: SortByStringOption = {
     desc: false,
