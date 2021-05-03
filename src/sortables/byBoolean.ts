@@ -1,4 +1,4 @@
-import sort from "../sort";
+import { getSorter } from "../sort";
 import { SortOption } from "../interfaces/interfaces";
 import { sortable, sortableWithOption } from "../types/types";
 
@@ -12,8 +12,10 @@ import { sortable, sortableWithOption } from "../types/types";
 const byBoolean: sortableWithOption<boolean, SortOption> = (
   options: SortOption = { desc: false }
 ): sortable<boolean> => {
+  const sorter = getSorter(options);
+
   return (first: boolean, second: boolean): number =>
-    sort(Number(second) - Number(first), options);
+    sorter(Number(second) - Number(first));
 };
 
 export default byBoolean;

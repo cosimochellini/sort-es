@@ -1,6 +1,4 @@
 import { SortOption } from "./interfaces/interfaces";
 
-const sort = (sortResult: number, options: SortOption): number =>
-  (options.desc ? -1 : 1) * sortResult;
-
-export default sort;
+export const getSorter = (options: SortOption): ((result: number) => number) =>
+  options.desc ? (result: number) => result * -1 : (result: number) => result;

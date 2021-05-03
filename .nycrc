@@ -9,6 +9,7 @@
     ],
     "exclude": [
         "coverage/**",
+        "lib/**",
         "node_modules/**",
         "**/*.d.ts",
         "**/*.test.ts",

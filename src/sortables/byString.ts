@@ -1,4 +1,4 @@
-import sort from "../sort";
+import { getSorter } from "../sort";
 import { SortByStringOption } from "../interfaces/interfaces";
 import { sortable, sortableWithOption } from "../types/types";
 
@@ -24,10 +24,10 @@ const byString: sortableWithOption<string, SortByStringOption> = (
     lowercase: false,
   }
 ): sortable<string> => {
+  const sorter = getSorter(options);
   return (first: string, second: string): number => {
-    return sort(
-      fixString(first, options).localeCompare(fixString(second, options)),
-      options
+    return sorter(
+      fixString(first, options).localeCompare(fixString(second, options))
     );
   };
 };

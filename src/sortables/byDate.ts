@@ -1,9 +1,10 @@
-import sort from "../sort";
+import { getSorter } from "../sort";
 import { SortByDateOption } from "../interfaces/interfaces";
+import { isFunction, isNumber, isString } from "../utils/typeCheck";
 import { datable, sortable, sortableWithOption } from "../types/types";
 
 const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
-  if (typeof parser !== "function") return new Date(date);
+  if (!isFunction(parser)) return new Date(date);
 
   return parser(date);
 };
@@ -22,15 +23,16 @@ const byDate: sortableWithOption<datable, SortByDateOption> = (
     nullable: false,
   }
 ): sortable<datable> => {
-  return (first: datable, second: datable): number => {
-    if (typeof first === "string" || typeof first === "number") {
-      first = parseDate(options.customParser, first);
-    }
+  const sorter = getSorter(options);
 
-    if (typeof second === "string" || typeof second === "number")
+  return (first: datable, second: datable): number => {
+    if (isString(first) || isNumber(first))
+      first = parseDate(options.customParser, first);
+
+    if (isString(second) || isNumber(second))
       second = parseDate(options.customParser, second);
 
-    return sort(first.getTime() - second.getTime(), options);
+    return sorter(first.getTime() - second.getTime());
   };
 };
 

@@ -1,4 +1,4 @@
-import sort from "../sort";
+import { getSorter } from "../sort";
 import { SortOption } from "../interfaces/interfaces";
 import { sortable, sortableWithOption } from "../types/types";
 
@@ -12,10 +12,12 @@ import { sortable, sortableWithOption } from "../types/types";
 const byNumber: sortableWithOption<number, SortOption> = (
   options: SortOption = { desc: false, nullable: false }
 ): sortable<number> => {
+  const sorter = getSorter(options);
+
   return (first: number, second: number): number =>
     options.nullable
-      ? sort((first || 0) - (second || 0), options)
-      : sort(first - second, options);
+      ? sorter((first || 0) - (second || 0))
+      : sorter(first - second);
 };
 
 export default byNumber;
