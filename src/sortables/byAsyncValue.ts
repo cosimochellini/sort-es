@@ -22,10 +22,8 @@ export class AsyncArray<T> extends Array<Promise<T>> {
     super(...items);
   }
 
-  public async sortAsync(sortFn: sortable<T>): Promise<T[]> {
-    const items = await Promise.all<T>(this);
-
-    return items.sort(sortFn);
+  public sortAsync(sortFn: sortable<T>): Promise<T[]> {
+    return Promise.all<T>(this).then((items) => items.sort(sortFn));
   }
 }
 
