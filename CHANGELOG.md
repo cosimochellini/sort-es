@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://github.com/cosimochellini/sort-es/compare/v1.3.4...v1.3.5) (2021-06-27)
+
+
+### Bug Fixes
+
+* **dep:** updated mocha to v9 ([89b0bbe](https://github.com/cosimochellini/sort-es/commit/89b0bbe2bd6afb90ab3ba8ccb30fd924434f9d10))
+
 ### [1.3.4](https://github.com/cosimochellini/sort-es/compare/v1.3.3...v1.3.4) (2021-06-06)
 
 
