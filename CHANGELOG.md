@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.11](https://github.com/cosimochellini/sort-es/compare/v1.3.10...v1.3.11) (2021-10-30)
+
+
+### Bug Fixes
+
+* **dependency:** updated dependency ([ba6de8c](https://github.com/cosimochellini/sort-es/commit/ba6de8c45022b05f640e7f1524715019fec65b39))
+
 ### [1.3.10](https://github.com/cosimochellini/sort-es/compare/v1.3.9...v1.3.10) (2021-10-08)
 
 
