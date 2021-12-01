@@ -37,8 +37,6 @@ function byValues<T>(
     );
     console.warn("this option will be removed in the next major release");
     for (const key in sorter) {
-      if (!Object.prototype.hasOwnProperty.call(sorter, key)) continue;
-
       const sortableFn = sorter[key];
 
       if (!sortableFn) continue;
