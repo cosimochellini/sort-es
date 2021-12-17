@@ -15,7 +15,7 @@ const byBoolean: sortableWithOption<boolean, SortOption> = (
   const sorter = getSorter(options);
 
   return (first: boolean, second: boolean): number =>
-    sorter(Number(second) - Number(first));
+    sorter(Number(second || false) - Number(first || false));
 };
 
 export default byBoolean;
