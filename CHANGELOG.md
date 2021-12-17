@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/cosimochellini/sort-es/compare/v1.4.1...v1.4.2) (2021-12-17)
+
+
+### Bug Fixes
+
+* **byBoolean:** handled the undefined case ([a4b94e4](https://github.com/cosimochellini/sort-es/commit/a4b94e43e77896b24f0d86a8c8ad9a701840ac12))
+
 ### [1.4.1](https://github.com/cosimochellini/sort-es/compare/v1.4.0...v1.4.1) (2021-12-13)
 
 
