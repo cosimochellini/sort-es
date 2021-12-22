@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.3](https://github.com/cosimochellini/sort-es/compare/v1.4.2...v1.4.3) (2021-12-22)
+
+
+### Bug Fixes
+
+* **ci:** updated node environment ([f0740b5](https://github.com/cosimochellini/sort-es/commit/f0740b5b2d9c1a619bce87944f1d1dee5b91ff4c))
+
 ### [1.4.2](https://github.com/cosimochellini/sort-es/compare/v1.4.1...v1.4.2) (2021-12-17)
 
 
