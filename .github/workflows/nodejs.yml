@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16]
 
     steps:
       - uses: actions/checkout@v2
@@ -21,9 +21,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
-      - run: yarn build
       - run: yarn test
       - run: yarn codecov
+      - run: yarn build
       - run: yarn publish --access public
         env:
           CI: true
