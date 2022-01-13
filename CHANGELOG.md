@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.5](https://github.com/cosimochellini/sort-es/compare/v1.4.4...v1.4.5) (2022-01-13)
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([0710233](https://github.com/cosimochellini/sort-es/commit/07102331b21f6c1f613116727ee738d7d71ecda8))
+
 ### [1.4.4](https://github.com/cosimochellini/sort-es/compare/v1.4.3...v1.4.4) (2022-01-07)
 
 
