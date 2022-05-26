@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.11](https://github.com/cosimochellini/sort-es/compare/v1.4.10...v1.4.11) (2022-05-26)
+
+
+### Bug Fixes
+
+* **dep:** updated @rollup/plugin-commonjs to 22 ([29a667d](https://github.com/cosimochellini/sort-es/commit/29a667d3cd6370dc90097ff7cfeb681d72ee8e40))
+* **dep:** updated commitlint to 17 ([11b59c2](https://github.com/cosimochellini/sort-es/commit/11b59c2dec5dfe4261c372b29956c2054d1df836))
+* **dep:** updated husky to 8 ([02938fa](https://github.com/cosimochellini/sort-es/commit/02938facf6d0556871bf45294cac4d5dbce4aff1))
+* **dep:** updated minor dev dependency ([564b07e](https://github.com/cosimochellini/sort-es/commit/564b07e4973fb732b47c1601ac7361571551c7c6))
+* **dep:** updated mocha to 10 ([458e957](https://github.com/cosimochellini/sort-es/commit/458e957e74bb6e0f23e69447623367e91ea73570))
+
 ### [1.4.10](https://github.com/cosimochellini/sort-es/compare/v1.4.9...v1.4.10) (2022-05-03)
 
 
