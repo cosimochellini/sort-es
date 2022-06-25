@@ -5,7 +5,7 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: "babel-eslint"
+    parser: '@babel/eslint-parser'
   },
   plugins: ["prettier", "@typescript-eslint"],
   extends: [
