@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/cosimochellini/sort-es/compare/v1.4.11...v1.5.0) (2022-06-26)
+
+
+### Bug Fixes
+
+* **dep:** updated '@babel/eslint-parser' ([d0c8cfd](https://github.com/cosimochellini/sort-es/commit/d0c8cfddedc57abc2ddbb60c12b1a956d6f51d78))
+
 ### [1.4.12](https://github.com/cosimochellini/sort-es/compare/v1.4.11...v1.4.12) (2022-06-18)
 
 ### [1.4.11](https://github.com/cosimochellini/sort-es/compare/v1.4.10...v1.4.11) (2022-05-26)
