@@ -1,17 +1,21 @@
-type sortable<T> = (first: T, second: T) => number;
+export type sortable<T> = (first: T, second: T) => number;
 
-type sortableWithOption<T, TOption> = (options?: TOption) => sortable<T>;
+export type sortableWithOption<T, TOption> = (options?: TOption) => sortable<T>;
 
-type datable = Date | number | string;
+export type datable = Date | number | string;
 
-type SortableObject<T> = {
-  [key in keyof T]?: sortable<T[key]>;
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type GenericTuple<T> = [(item: T) => any, sortable<any>];
 
-type SortableTuple<T> = keyof T extends infer TKey
-  ? TKey extends keyof T
-    ? [TKey, sortable<T[TKey]>]
-    : never
-  : never;
-
-export { sortable, sortableWithOption, datable, SortableObject, SortableTuple };
+export type ByValuesSorter<T, TTuple extends GenericTuple<T>[]> = [
+  ...{
+    [Key in keyof TTuple]: TTuple[Key] extends [
+      (data: T) => infer U,
+      sortable<infer X>
+    ]
+      ? [U] extends [X]
+        ? TTuple[Key]
+        : [TypeError, "Sortable type does not match with value provider."]
+      : TTuple[Key];
+  }
+];
