@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/cosimochellini/sort-es/compare/v1.5.3...v1.6.0) (2022-10-30)
+
+
+### Features
+
+* **byValues:** changed the tuple typing, now the discriminator is a function ([9b936c7](https://github.com/cosimochellini/sort-es/commit/9b936c7704e9fd0682f328185270b78ce5aa6ac0))
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([6053019](https://github.com/cosimochellini/sort-es/commit/6053019b0f2d7c8d30710ce8198b36061f7242fe))
+
 ### [1.5.3](https://github.com/cosimochellini/sort-es/compare/v1.5.2...v1.5.3) (2022-10-09)
 
 
