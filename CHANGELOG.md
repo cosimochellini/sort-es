@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.6.0](https://github.com/cosimochellini/sort-es/compare/v1.5.3...v1.6.0) (2022-10-30)
 
+### Breaking changes
+
+* **byValues:** removed the option to pass an object in the byValues function
+*  **byValues:** changed the first item for the sortable tuple
+
+to see more in details the migration guide : [sortable-es.app/breaking-changes](https://sort-es.netlify.app/breaking-changes/)
 
 ### Features
 
