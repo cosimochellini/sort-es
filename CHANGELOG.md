@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/cosimochellini/sort-es/compare/v1.6.0...v1.6.1) (2022-10-31)
+
+
+### Bug Fixes
+
+* **by-values:** added warning for older implementation ([12d83f6](https://github.com/cosimochellini/sort-es/commit/12d83f6eef11151dd18f1af16895ba001d3c55c6)), closes [#8](https://github.com/cosimochellini/sort-es/issues/8)
+
 ## [1.6.0](https://github.com/cosimochellini/sort-es/compare/v1.5.3...v1.6.0) (2022-10-30)
 
 ### Breaking changes
