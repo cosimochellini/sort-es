@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.12](https://github.com/cosimochellini/sort-es/compare/v1.6.11...v1.6.12) (2023-06-23)
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([4726fd6](https://github.com/cosimochellini/sort-es/commit/4726fd6e466fb263b16add954d5793a0cf4e5aac))
+
 ### [1.6.11](https://github.com/cosimochellini/sort-es/compare/v1.6.10...v1.6.11) (2023-06-04)
 
 
