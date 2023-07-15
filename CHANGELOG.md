@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.13](https://github.com/cosimochellini/sort-es/compare/v1.6.12...v1.6.13) (2023-07-15)
+
+
+### Bug Fixes
+
+* **byDate:** handled nullable option for byDate [#12](https://github.com/cosimochellini/sort-es/issues/12) ([8867634](https://github.com/cosimochellini/sort-es/commit/886763468158fc94c95a28660060d53131900780))
+
 ### [1.6.12](https://github.com/cosimochellini/sort-es/compare/v1.6.11...v1.6.12) (2023-06-23)
 
 
