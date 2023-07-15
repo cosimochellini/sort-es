@@ -1,13 +1,10 @@
-import { getSorter } from "../sort";
-import { SortByDateOption } from "../interfaces/interfaces";
-import { isFunction, isNumber, isString } from "../utils/typeCheck";
-import { datable, sortable, sortableWithOption } from "../types/types";
+import {getSorter} from "../sort";
+import {SortByDateOption} from "../interfaces/interfaces";
+import {datable, sortable, sortableWithOption} from "../types/types";
 
-const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
-  if (!isFunction(parser)) return new Date(date);
+const parseDate = (date: datable) => new Date(date);
 
-  return parser(date);
-};
+const parseNullableDate = (date: datable | null | undefined) => new Date(date || 0);
 
 /**
  * the sortable for the date values
@@ -17,23 +14,16 @@ const parseDate = (parser: (item: datable) => Date, date: datable): Date => {
  * @version 1.0.0
  */
 const byDate: sortableWithOption<datable, SortByDateOption> = (
-  options: SortByDateOption = {
+  options = {
     desc: false,
     customParser: null,
     nullable: false,
   }
 ): sortable<datable> => {
   const sorter = getSorter(options);
+  const parser = options.customParser || (options.nullable ? parseNullableDate : parseDate);
 
-  return (first: datable, second: datable): number => {
-    if (isString(first) || isNumber(first))
-      first = parseDate(options.customParser, first);
-
-    if (isString(second) || isNumber(second))
-      second = parseDate(options.customParser, second);
-
-    return sorter(first.getTime() - second.getTime());
-  };
+  return (first, second) => sorter(parser(first).getTime() - parser(second).getTime());
 };
 
 export default byDate;

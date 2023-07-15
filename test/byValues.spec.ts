@@ -22,7 +22,10 @@ const correctArraySorted = [
 describe("ByValues sorting, array option", () => {
   it("Does sort an array by multiple props", () => {
     const arraySorted = arrayUnsorted.sort(
-      byValues([[(x) => x.prop, byString()]])
+      byValues([
+        [(x) => x.prop, byString()],
+        [(x) => x.att, byNumber()],
+      ])
     );
 
     const [first, last] = getFirstAndLast(arraySorted);
@@ -155,18 +158,18 @@ describe("ByValues sorting desc, array option", () => {
     );
 
     const currentArraySorted = [
-      { prop: "aaa", att: 5 },
+      { prop: "ccc", att: 0 },
       { prop: "aaa", att: 2 },
       { prop: "bbb", att: 3 },
       { prop: "ccc", att: 3 },
-      { prop: "ccc", att: 0 },
+      { prop: "aaa", att: 5 },
     ];
 
     const [first, last] = getFirstAndLast(arraySorted);
 
-    expectObjectToBeEquals(first.prop, "aaa");
+    expectObjectToBeEquals(first.prop, "ccc");
 
-    expectObjectToBeEquals(last.prop, "ccc");
+    expectObjectToBeEquals(last.prop, "aaa");
 
     expectObjectToBeEquals(
       arraySorted.map((a) => a.prop),

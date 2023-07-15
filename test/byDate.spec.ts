@@ -1,8 +1,8 @@
 import "mocha";
-import { expect } from "chai";
-import { byDate } from "../src/index";
-import { addDays, parseISO } from "date-fns";
-import { getFirstAndLast, reverse } from "./utils/sort";
+import {expect} from "chai";
+import {byDate} from "../src/index";
+import {addDays, parseISO} from "date-fns";
+import {getFirstAndLast, reverse} from "./utils/sort";
 
 import {
   expectObjectToBeEquals,
@@ -36,7 +36,7 @@ describe("ByDate sorting", () => {
 
 describe("ByDate sorting desc", () => {
   it("Does sort an array by date descending", () => {
-    const arraySorted = arrayUnsorted.sort(byDate({ desc: true }));
+    const arraySorted = arrayUnsorted.sort(byDate({desc: true}));
 
     const [first, last] = getFirstAndLast(arraySorted);
 
@@ -93,3 +93,32 @@ describe("ByDate sorting using custom parser", () => {
     expectDatableToBeEquals(arraySorted, correctArraySorted);
   });
 });
+
+describe("ByDate sorting with nullables", () => {
+  it("Does sort an array by date with nullables", () => {
+    const arrayWithNullables = [
+      null,
+      ...arrayUnsorted,
+      null,
+    ]
+
+    const correctArraySortedWithNullables = [
+      null,
+      null,
+      ...correctArraySorted,
+    ]
+
+    const arraySorted = arrayWithNullables.sort(
+      byDate({nullable: true})
+    );
+
+    const [first, last] = getFirstAndLast(arraySorted);
+
+    expectDateToBeEquals(first, null);
+
+    expectDateToBeEquals(last, tomorrow);
+
+    expectDatableToBeEquals(arraySorted, correctArraySortedWithNullables);
+  });
+});
+

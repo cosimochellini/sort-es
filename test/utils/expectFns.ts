@@ -1,11 +1,11 @@
 import "mocha";
-import { expect } from "chai";
-import { isSameDay } from "date-fns";
-import { withoutTime } from "./date";
-import { datable } from "../../src/types/types";
+import {expect} from "chai";
+import {isSameDay} from "date-fns";
+import {withoutTime} from "./date";
+import {datable} from "../../src/types/types";
 
-const expectObjectToBeEquals = <T>(array1: T, array2: T): void => {
-  expect(JSON.stringify(array1)).to.be.equal(JSON.stringify(array2));
+const expectObjectToBeEquals = <T>(item1: T, item2: T): void => {
+  expect(JSON.stringify(item1)).to.be.equal(JSON.stringify(item2));
 };
 
 const expectDateToBeEquals = (date1: datable, date2: datable): void => {
@@ -13,8 +13,8 @@ const expectDateToBeEquals = (date1: datable, date2: datable): void => {
 };
 
 const expectDatableToBeEquals = (
-  array1: datable[],
-  array2: datable[]
+  array1: (datable | undefined | null)[],
+  array2: (datable | undefined | null)[]
 ): void => {
   const parsedArray1 = array1.map((d) => withoutTime(new Date(d)));
 

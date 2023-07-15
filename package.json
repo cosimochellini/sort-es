@@ -96,8 +96,8 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.ts",
-    "test": "nyc --reporter=lcov mocha --recursive --require  ts-node/register --exit test/**/*.ts",
-    "test:local": "nyc mocha --recursive --require ts-node/register --exit test/**/*.ts",
+    "test": "nyc --reporter=lcov mocha --recursive --require  ts-node/register --exit test/*.ts",
+    "test:local": "nyc mocha --recursive --require ts-node/register --exit test/*.ts",
     "lint": "eslint src/*.ts",
     "release": "standard-version",
     "prepare": "husky install"
