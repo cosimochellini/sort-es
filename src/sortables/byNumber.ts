@@ -1,6 +1,6 @@
-import { getSorter } from "../sort";
-import { SortOption } from "../interfaces/interfaces";
-import { sortable, sortableWithOption } from "../types/types";
+import {getSorter} from "../sort";
+import {SortOption} from "../interfaces/interfaces";
+import {sortable, sortableWithOption} from "../types/types";
 
 /**
  * the sortable to sort the **number primitive**
@@ -10,14 +10,14 @@ import { sortable, sortableWithOption } from "../types/types";
  * @version 1.0.0
  */
 const byNumber: sortableWithOption<number, SortOption> = (
-  options: SortOption = { desc: false, nullable: false }
+  options: SortOption = {desc: false, nullable: false}
 ): sortable<number> => {
   const sorter = getSorter(options);
 
   return (first: number, second: number): number =>
     options.nullable
-      ? sorter((first || 0) - (second || 0))
-      : sorter(first - second);
+      ? sorter((first || 0) - (second || 0) || 0)
+      : sorter((first - second) || 0);
 };
 
 export default byNumber;
