@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.16](https://github.com/cosimochellini/sort-es/compare/v1.6.15...v1.6.16) (2023-08-13)
+
+
+### Bug Fixes
+
+* **byNumber:** added proper fallback for sorting multiple Infinity values ([fa05f5f](https://github.com/cosimochellini/sort-es/commit/fa05f5f85d49b7a5fafdd3428c28a6bf3483a025)), closes [#13](https://github.com/cosimochellini/sort-es/issues/13)
+
 ### [1.6.15](https://github.com/cosimochellini/sort-es/compare/v1.6.14...v1.6.15) (2023-08-05)
 
 
