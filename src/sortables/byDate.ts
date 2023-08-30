@@ -14,16 +14,15 @@ const parseNullableDate = (date: datable | null | undefined) => new Date(date ||
  * @version 1.0.0
  */
 const byDate: sortableWithOption<datable, SortByDateOption> = (
-  options = {
-    desc: false,
-    customParser: null,
-    nullable: false,
-  }
+    options = {
+        desc: false,
+        nullable: false,
+    }
 ): sortable<datable> => {
-  const sorter = getSorter(options);
-  const parser = options.customParser || (options.nullable ? parseNullableDate : parseDate);
+    const sorter = getSorter(options);
+    const parser = options.customParser || (options.nullable ? parseNullableDate : parseDate);
 
-  return (first, second) => sorter(parser(first).getTime() - parser(second).getTime());
+    return (first, second) => sorter(parser(first!).getTime() - parser(second!).getTime());
 };
 
 export default byDate;

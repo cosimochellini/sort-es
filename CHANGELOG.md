@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/cosimochellini/sort-es/compare/v1.6.16...v1.7.0) (2023-08-30)
+
+
+### Features
+
+* **sortables:** added support for nullables type ([267abbc](https://github.com/cosimochellini/sort-es/commit/267abbcb49806d497fb5b10af971bbbf456bfb02)), closes [#10](https://github.com/cosimochellini/sort-es/issues/10)
+* **tests:** added test for nullables sort ([c09182f](https://github.com/cosimochellini/sort-es/commit/c09182f49c3c14fc3cc4a0a15c14d8b3480ae863))
+* **tsconfig:** enabled strictNullChecks in tsconfig ([5a611f6](https://github.com/cosimochellini/sort-es/commit/5a611f6e0097697d8ef8ffe00985f9c8ada47ebe))
+* **types:** added support for nullable type ([d5d2a21](https://github.com/cosimochellini/sort-es/commit/d5d2a21a8fbcad9088756a0421fed1bc9ed27088))
+
 ### [1.6.16](https://github.com/cosimochellini/sort-es/compare/v1.6.15...v1.6.16) (2023-08-13)
 
 

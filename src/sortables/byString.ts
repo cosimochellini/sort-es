@@ -1,13 +1,13 @@
-import { getSorter } from "../sort";
-import { SortByStringOption } from "../interfaces/interfaces";
-import { sortable, sortableWithOption } from "../types/types";
+import {getSorter} from "../sort";
+import {SortByStringOption} from "../interfaces/interfaces";
+import {sortable, sortableWithOption} from "../types/types";
 
-const fixString = (value: string, options: SortByStringOption) => {
+const fixString = (value: string | null | undefined, options: SortByStringOption) => {
     if (options.nullable) value = value || "";
 
-    if (options.lowercase) value = value.toLowerCase();
+    if (options.lowercase) value = value!.toLowerCase();
 
-    return value;
+    return value as string;
 };
 
 /**
@@ -25,11 +25,11 @@ const byString: sortableWithOption<string, SortByStringOption> = (
     }
 ): sortable<string> => {
     const sorter = getSorter(options);
-    return (first: string, second: string): number => {
-        return sorter(
+
+    return (first, second) =>
+        sorter(
             fixString(first, options).localeCompare(fixString(second, options))
         );
-    };
 };
 
 export default byString;

@@ -8,7 +8,7 @@ import { isDate, isNumber, isString } from "../utils/typeCheck";
 const byAny = <T extends string | number | Date>(
   options: SortOption = { desc: false }
 ): sortable<T> => {
-  return (first: T, second: T): number => {
+  return (first, second) => {
     if (isNumber(first) && isNumber(second))
       return byNumber(options)(first, second);
 
