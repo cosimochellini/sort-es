@@ -14,10 +14,10 @@ const byNumber: sortableWithOption<number, SortOption> = (
 ): sortable<number> => {
   const sorter = getSorter(options);
 
-  return (first: number, second: number): number =>
+  return (first, second): number =>
     options.nullable
       ? sorter((first || 0) - (second || 0) || 0)
-      : sorter((first - second) || 0);
+      : sorter((first! - second!) || 0);
 };
 
 export default byNumber;
