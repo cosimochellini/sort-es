@@ -1,19 +1,51 @@
 import { datable } from "../types/types";
 
-interface SortOption {
+export interface SortOption {
   desc?: boolean;
   nullable?: boolean;
 }
 
-interface SortByNumberOption extends SortOption {
+/**
+ * The default value of {@link SortByNumberOption.valuesOrder}.
+ */
+export const DEFAULT_NUMBER_VALUE_CATEGORY_ORDER = [
+    "other",
+    "NaN",
+    "null",
+    "undefined",
+] as const;
+
+/**
+ * A kind of value that can be sorted using `byNumber`.
+ */
+export type NumberValueCategory = (typeof DEFAULT_NUMBER_VALUE_CATEGORY_ORDER)[number];
+
+/**
+ * Sorting options for `byNumber`.
+ */
+export interface SortByNumberOption extends SortOption {
   /**
-   * This option controls how NaN values are sorted:
+   * This option controls how various special values are sorted relative to one
+   * another.
    *
-   * - "first" or undefined: NaN is sorted before any other value.
-   * - "last": NaN is sorted after any other value.
-   * - "error": Any comparison involving NaN throws an error.
+   * Each possible value may appear at most once. The default order is ["other",
+   * "NaN", "null", "undefined"], meaning ordinary numbers are sortered first,
+   * followed by any `NaN`, then all `null` values, and finally all `undefined`
+   * values.
+   *
+   * Omitting "other" is the same as putting it first.  Omitting any of "NaN",
+   * "null", or "undefined" is the same as putting that value last; omitting
+   * more than one is the same as putting the last in the same order as in the
+   * default array.
+   *
+   * The {@link SortOption.desc} does not affect the order created by this
+   * option. It only affects how numbers are sorted within the "others"
+   * category.
+   *
+   * Note that `Array.sort` always acts as if "undefined" is last, regardless of
+   * any sorting options.
    */
-  sortNaN?: "first" | "last" | "error";
+    valueCategoryOrder?: NumberValueCategory[];
 
   /**
    * @deprecated Using this option results in a comparison function that is
@@ -25,12 +57,10 @@ interface SortByNumberOption extends SortOption {
   nullable?: boolean;
 }
 
-interface SortByStringOption extends SortOption {
+export interface SortByStringOption extends SortOption {
   lowercase?: boolean;
 }
 
-interface SortByDateOption extends SortOption {
+export interface SortByDateOption extends SortOption {
   customParser?: (item: datable) => Date;
 }
-
-export { SortOption, SortByNumberOption, SortByStringOption, SortByDateOption };
