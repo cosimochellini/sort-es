@@ -9,6 +9,7 @@ import byNumber, {
   normalizeNumberValueCategoryOrder,
 } from "../src/sortables/byNumber";
 
+
 const arbSortable: fc.Arbitrary<NumberLike> = fc.oneof(
   { weight: 10, arbitrary: fc.double() },
   fc.constant(Infinity),
@@ -82,3 +83,4 @@ describe("ByNumber sorting", () => {
     );
   });
 });
+

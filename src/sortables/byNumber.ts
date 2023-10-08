@@ -6,6 +6,7 @@ import {
 } from "../interfaces/interfaces";
 import { sortable, sortableWithOption } from "../types/types";
 
+
 export type NumberLike = number | null | undefined;
 
 export function normalizeNumberValueCategoryOrder(order: NumberValueCategory[]): void {

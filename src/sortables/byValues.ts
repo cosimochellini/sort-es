@@ -17,12 +17,12 @@ export default function byValues<T, TTuple extends GenericTuple<T>[]>(
       let sortResult: number | undefined;
 
       if (typeof prop === "function") {
-        sortResult = sortableFn(prop(first), prop(second));
+        sortResult = sortableFn(prop(first!), prop(second!));
       } else {
         console.log(
           `you're running a deprecated option, checkout https://sort-es.netlify.app/breaking-changes/ `
         );
-        sortResult = sortableFn(first[prop], second[prop]);
+        sortResult = sortableFn(first![prop], second![prop]);
       }
 
       if (sortResult !== 0) return sortResult;

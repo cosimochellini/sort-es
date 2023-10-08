@@ -2,6 +2,76 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/cosimochellini/sort-es/compare/v1.4.11...v1.7.2) (2023-10-05)
+
+
+### Features
+
+* **byValues:** changed the tuple typing, now the discriminator is a function ([9b936c7](https://github.com/cosimochellini/sort-es/commit/9b936c7704e9fd0682f328185270b78ce5aa6ac0))
+* **sortables:** added support for nullables type ([267abbc](https://github.com/cosimochellini/sort-es/commit/267abbcb49806d497fb5b10af971bbbf456bfb02)), closes [#10](https://github.com/cosimochellini/sort-es/issues/10)
+* **tests:** added test for nullables sort ([c09182f](https://github.com/cosimochellini/sort-es/commit/c09182f49c3c14fc3cc4a0a15c14d8b3480ae863))
+* **tsconfig:** enabled strictNullChecks in tsconfig ([5a611f6](https://github.com/cosimochellini/sort-es/commit/5a611f6e0097697d8ef8ffe00985f9c8ada47ebe))
+* **types:** added support for nullable type ([d5d2a21](https://github.com/cosimochellini/sort-es/commit/d5d2a21a8fbcad9088756a0421fed1bc9ed27088))
+
+
+### Bug Fixes
+
+* **by-values:** added warning for older implementation ([12d83f6](https://github.com/cosimochellini/sort-es/commit/12d83f6eef11151dd18f1af16895ba001d3c55c6)), closes [#8](https://github.com/cosimochellini/sort-es/issues/8)
+* **byDate:** handled nullable option for byDate [#12](https://github.com/cosimochellini/sort-es/issues/12) ([8867634](https://github.com/cosimochellini/sort-es/commit/886763468158fc94c95a28660060d53131900780))
+* **byNumber:** added proper fallback for sorting multiple Infinity values ([fa05f5f](https://github.com/cosimochellini/sort-es/commit/fa05f5f85d49b7a5fafdd3428c28a6bf3483a025)), closes [#13](https://github.com/cosimochellini/sort-es/issues/13)
+* **dep:** updated '@babel/eslint-parser' ([d0c8cfd](https://github.com/cosimochellini/sort-es/commit/d0c8cfddedc57abc2ddbb60c12b1a956d6f51d78))
+* **dep:** updated dependency ([0d2271d](https://github.com/cosimochellini/sort-es/commit/0d2271dfb19f02ec5f3f812644ee814fd4affd8c))
+* **dep:** updated dependency ([16c6c85](https://github.com/cosimochellini/sort-es/commit/16c6c850a4e76711fed7fa0bde9e486dd0bb30fa))
+* **dep:** updated dependency ([2e9b291](https://github.com/cosimochellini/sort-es/commit/2e9b29179bfabed72e771c54deeeb3b282330913))
+* **dep:** updated dependency ([ba51cda](https://github.com/cosimochellini/sort-es/commit/ba51cdace6f16d6dd38f956d5af6cb3394c7a722))
+* **dep:** updated dependency ([4726fd6](https://github.com/cosimochellini/sort-es/commit/4726fd6e466fb263b16add954d5793a0cf4e5aac))
+* **dep:** updated dependency ([6bcf033](https://github.com/cosimochellini/sort-es/commit/6bcf03300a8320fc13cb472f88fdbf368b8a8566))
+* **dep:** updated dependency ([c24431e](https://github.com/cosimochellini/sort-es/commit/c24431efe78df19ae10527e98da32778272790f3))
+* **dep:** updated dependency ([fea0986](https://github.com/cosimochellini/sort-es/commit/fea098661174d33c0f2c35a17739708c673fc1c0))
+* **dep:** updated dependency ([6551b8b](https://github.com/cosimochellini/sort-es/commit/6551b8b4c1e1e17a9434e60eb5b938e9d686804c))
+* **dep:** updated dependency ([1d623ab](https://github.com/cosimochellini/sort-es/commit/1d623ab35d0e7e337725fe9f377e4b6f0cbac880))
+* **dep:** updated dependency ([85c053a](https://github.com/cosimochellini/sort-es/commit/85c053aab53f550d213f2658b3346095105fd349))
+* **dep:** updated dependency ([fc3087b](https://github.com/cosimochellini/sort-es/commit/fc3087b4c2f18d3ac8ea8b7d183bbc368df16836))
+* **dep:** updated dependency ([c1437a3](https://github.com/cosimochellini/sort-es/commit/c1437a316350f15a4e1e601ba798bc77a116c389))
+* **dep:** updated dependency ([578dd27](https://github.com/cosimochellini/sort-es/commit/578dd27ccabc85d0887f682b43493c341468dd6b))
+* **dep:** updated dependency ([7d76e24](https://github.com/cosimochellini/sort-es/commit/7d76e247c7a05cc0e0af4c161ad88a7fa9822894))
+* **dep:** updated dependency ([6053019](https://github.com/cosimochellini/sort-es/commit/6053019b0f2d7c8d30710ce8198b36061f7242fe))
+* **dep:** updated minor dev dependency ([76cae48](https://github.com/cosimochellini/sort-es/commit/76cae48ea66e94013a24d81ec5c20fd4788a7424))
+* **dep:** updated minor dev dependency ([d226cb5](https://github.com/cosimochellini/sort-es/commit/d226cb5386334458b72c9436a750b2e9e90597f6))
+* **dep:** updated minor dev dependency ([ed59e9b](https://github.com/cosimochellini/sort-es/commit/ed59e9b6342d0feff4f0cdc27b60fa0c2fb13fe6))
+* **lock:** updated devDeps ([4a1bda6](https://github.com/cosimochellini/sort-es/commit/4a1bda69e37dff89b0d73d1cae229dfecc001869))
+
+### [1.7.1](https://github.com/cosimochellini/sort-es/compare/v1.7.0...v1.7.1) (2023-09-14)
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([16c6c85](https://github.com/cosimochellini/sort-es/commit/16c6c850a4e76711fed7fa0bde9e486dd0bb30fa))
+
+## [1.7.0](https://github.com/cosimochellini/sort-es/compare/v1.6.16...v1.7.0) (2023-08-30)
+
+
+### Features
+
+* **sortables:** added support for nullables type ([267abbc](https://github.com/cosimochellini/sort-es/commit/267abbcb49806d497fb5b10af971bbbf456bfb02)), closes [#10](https://github.com/cosimochellini/sort-es/issues/10)
+* **tests:** added test for nullables sort ([c09182f](https://github.com/cosimochellini/sort-es/commit/c09182f49c3c14fc3cc4a0a15c14d8b3480ae863))
+* **tsconfig:** enabled strictNullChecks in tsconfig ([5a611f6](https://github.com/cosimochellini/sort-es/commit/5a611f6e0097697d8ef8ffe00985f9c8ada47ebe))
+* **types:** added support for nullable type ([d5d2a21](https://github.com/cosimochellini/sort-es/commit/d5d2a21a8fbcad9088756a0421fed1bc9ed27088))
+
+### [1.6.16](https://github.com/cosimochellini/sort-es/compare/v1.6.15...v1.6.16) (2023-08-13)
+
+
+### Bug Fixes
+
+* **byNumber:** added proper fallback for sorting multiple Infinity values ([fa05f5f](https://github.com/cosimochellini/sort-es/commit/fa05f5f85d49b7a5fafdd3428c28a6bf3483a025)), closes [#13](https://github.com/cosimochellini/sort-es/issues/13)
+
+### [1.6.15](https://github.com/cosimochellini/sort-es/compare/v1.6.14...v1.6.15) (2023-08-05)
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([2e9b291](https://github.com/cosimochellini/sort-es/commit/2e9b29179bfabed72e771c54deeeb3b282330913))
+
 ### [1.6.14](https://github.com/cosimochellini/sort-es/compare/v1.6.13...v1.6.14) (2023-07-17)
 
 

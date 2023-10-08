@@ -10,7 +10,7 @@ import { sortable } from "../types/types";
  */
 function byValue<T, K extends keyof T>(
   discriminator: K,
-  sortFn: sortable<T[K]>
+  sortFn: sortable<NonNullable<T[K]>>
 ): sortable<T>;
 
 /**
@@ -23,7 +23,7 @@ function byValue<T, K extends keyof T>(
  */
 function byValue<T, TReturn>(
   discriminator: (item: T) => TReturn,
-  sortFn: sortable<TReturn>
+  sortFn: sortable<NonNullable<TReturn>>
 ): sortable<T>;
 
 function byValue<T, K extends keyof T, TResult>(
@@ -31,19 +31,19 @@ function byValue<T, K extends keyof T, TResult>(
   sortFn: sortable<T[K]> | sortable<TResult>
 ): sortable<T> {
   if (typeof discriminator === "function") {
-    return (first: T, second: T): number => {
-      const firstItem: TResult = discriminator(first);
+    return (first, second) => {
+      const firstItem: TResult = discriminator(first!);
 
-      const secondItem: TResult = discriminator(second);
+      const secondItem: TResult = discriminator(second!);
 
       return (sortFn as sortable<TResult>)(firstItem, secondItem);
     };
   }
 
-  return (first: T, second: T): number => {
-    const firstItem: T[K] = first[discriminator];
+  return (first, second) => {
+    const firstItem: T[K] = first![discriminator];
 
-    const secondItem: T[K] = second[discriminator];
+    const secondItem: T[K] = second![discriminator];
 
     return (sortFn as sortable<T[K]>)(firstItem, secondItem);
   };

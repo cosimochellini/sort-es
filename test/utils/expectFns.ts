@@ -5,22 +5,23 @@ import { withoutTime } from "./date";
 import { datable } from "../../src/types/types";
 
 const expectObjectToBeEquals = <T>(item1: T, item2: T): void => {
-  expect(JSON.stringify(item1)).to.be.equal(JSON.stringify(item2));
+    expect(JSON.stringify(item1)).to.be.equal(JSON.stringify(item2));
 };
 
-const expectDateToBeEquals = (date1: datable, date2: datable): void => {
-  expect(isSameDay(new Date(date1), new Date(date2))).to.be.equal(true);
+
+const expectDateToBeEquals = (date1: datable | null | undefined, date2: datable | null | undefined): void => {
+    expect(isSameDay(new Date(date1 ?? 0), new Date(date2 ?? 0))).to.be.equal(true);
 };
 
 const expectDatableToBeEquals = (
-  array1: (datable | undefined | null)[],
-  array2: (datable | undefined | null)[]
+    array1: (datable | undefined | null)[],
+    array2: (datable | undefined | null)[]
 ): void => {
-  const parsedArray1 = array1.map((d) => withoutTime(new Date(d)));
+    const parsedArray1 = array1.map((d) => withoutTime(new Date(d??'')));
 
-  const parsedArray2 = array2.map((d) => withoutTime(new Date(d)));
+    const parsedArray2 = array2.map((d) => withoutTime(new Date(d??'')));
 
-  expectObjectToBeEquals(parsedArray1, parsedArray2);
+    expectObjectToBeEquals(parsedArray1, parsedArray2);
 };
 
 // Doesn't handle objects, but handles infinities and NaN better than
@@ -36,8 +37,7 @@ export const expectLessThan = <T>(item1: T, item2: T, cmp: (item1: T, item2: T) 
 }
 
 export {
-  expectObjectToBeEquals,
-  expectDateToBeEquals,
-  expectDatableToBeEquals,
-  expectStringToBeEquals,
+    expectObjectToBeEquals,
+    expectDateToBeEquals,
+    expectDatableToBeEquals,
 };
