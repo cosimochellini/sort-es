@@ -1,6 +1,14 @@
+import { SortOption } from "src/interfaces/interfaces";
 import { sortable, sortableWithOption } from "../types/types";
 
-const byDefault: sortableWithOption<unknown, { desc?: boolean }> = ({
+/**
+ * the sortable which sorts the same as `Array.sort` with no comparator
+ * @param options used to specify whether the sort is descending; the `nullable` setting is ignored
+ *
+ * {@link https://sort-es.netlify.app/by-default byDefault docs}
+ * @version 1.8.0
+ */
+const byDefault: sortableWithOption<unknown, Omit<SortOption, "nullable">> = ({
   desc = false,
 } = {}): sortable<unknown> => {
   const sign = desc ? -1 : 1;
@@ -9,11 +17,11 @@ const byDefault: sortableWithOption<unknown, { desc?: boolean }> = ({
       if (y === undefined) {
         return 0;
       } else {
-        return sign;
+        return 1;
       }
     }
     if (y === undefined) {
-      return -sign;
+      return -1;
     }
     const xString = String(x);
     const yString = String(y);
