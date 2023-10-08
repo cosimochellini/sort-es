@@ -1,3 +1,4 @@
+import { SortOption } from "src/interfaces/interfaces";
 import { sortable } from "../types/types";
 
 /**
@@ -6,8 +7,14 @@ import { sortable } from "../types/types";
  * The values `null` and `undefined` are treated as empty sequences.
  *
  * @param sortFn the sortable to be applied corresponding items in each sequence
+ * @param options the option to control whether the sort is descending
  */
-function lexicographically<T>(sortFn: sortable<T>): sortable<Iterable<T>> {
+function lexicographically<T>(
+  sortFn: sortable<T>,
+  options: Omit<SortOption, "nullable"> = {}
+): sortable<Iterable<T>> {
+  const { desc = false } = options;
+  const sign = desc ? -1 : 1;
   return (
     left: Iterable<T> | null | undefined,
     right: Iterable<T> | null | undefined
@@ -21,14 +28,14 @@ function lexicographically<T>(sortFn: sortable<T>): sortable<Iterable<T>> {
         return 0;
       }
       if (leftDone) {
-        return -1;
+        return -sign;
       }
       if (rightDone) {
-        return 1;
+        return sign;
       }
       const v = sortFn(leftValue, rightValue);
       if (v !== 0) {
-        return v;
+        return sign * v;
       }
     }
   };
