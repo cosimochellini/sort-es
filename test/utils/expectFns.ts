@@ -1,8 +1,8 @@
 import "mocha";
-import { expect } from "chai";
-import { isSameDay } from "date-fns";
-import { withoutTime } from "./date";
-import { datable } from "../../src/types/types";
+import {expect} from "chai";
+import {isSameDay} from "date-fns";
+import {withoutTime} from "./date";
+import {datable} from "../../src/types/types";
 
 const expectObjectToBeEquals = <T>(item1: T, item2: T): void => {
     expect(JSON.stringify(item1)).to.be.equal(JSON.stringify(item2));
@@ -23,18 +23,6 @@ const expectDatableToBeEquals = (
 
     expectObjectToBeEquals(parsedArray1, parsedArray2);
 };
-
-// Doesn't handle objects, but handles infinities and NaN better than
-// `expectObjectToBeEquals`.
-const expectStringToBeEquals = (data1: unknown, data2: unknown): void => {
-  expect(String(data1)).to.be.equal(String(data2));
-};
-
-// TODO
-export const expectLessThan = <T>(item1: T, item2: T, cmp: (item1: T, item2: T) => number) => {
-  expect(cmp(item1, item2)).to.be.lessThan(0);
-  expect(cmp(item2, item1)).to.be.greaterThan(0);
-}
 
 export {
     expectObjectToBeEquals,

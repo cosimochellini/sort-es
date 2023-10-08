@@ -66,7 +66,7 @@ const byNumber: sortableWithOption<NumberLike, SortByNumberOption> = (
     desc: false,
     nullable: false,
   }
-): sortable<number> => {
+): sortable<NumberLike> => {
   // Convert the options to primitive numbers in local variables.
   const sign = getSorter(options)(1);
   const valuesOrderRecord = makeValuesOrderRecord(
@@ -107,7 +107,7 @@ const byNumber: sortableWithOption<NumberLike, SortByNumberOption> = (
   // algorithm, because undefined is always sorted last regardless of the
   // comparison function.
   if (options.nullable) {
-    return (first: number, second: number) => compare(first || 0, second || 0);
+    return (first: NumberLike, second: NumberLike) => compare(first || 0, second || 0);
   }
 
   return compare;

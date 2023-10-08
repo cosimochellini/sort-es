@@ -9,7 +9,6 @@ import byNumber, {
   normalizeNumberValueCategoryOrder,
 } from "../src/sortables/byNumber";
 
-
 const arbSortable: fc.Arbitrary<NumberLike> = fc.oneof(
   { weight: 10, arbitrary: fc.double() },
   fc.constant(Infinity),
@@ -45,7 +44,7 @@ describe("ByNumber sorting", () => {
         fc.boolean(),
         (array, order, desc) => {
           array.sort(byNumber({ valueCategoryOrder: order, desc }));
-          
+
           let i = 0;
           normalizeNumberValueCategoryOrder(order);
           for (const category of order) {
@@ -68,9 +67,11 @@ describe("ByNumber sorting", () => {
         fc.boolean(),
         (array, order, desc) => {
           array.sort(byNumber({ valueCategoryOrder: order, desc }));
-          
+
           const sign = desc ? -1 : 1;
-          const justNumbers = array.filter((n) => categoryOf(n) === "other");
+          const justNumbers = array.filter(
+            (n) => categoryOf(n) === "other"
+          ) as number[];
           for (let i = 0; i < justNumbers.length - 1; i++) {
             if (!(sign * justNumbers[i] <= sign * justNumbers[i + 1])) {
               return false;
@@ -83,4 +84,3 @@ describe("ByNumber sorting", () => {
     );
   });
 });
-
