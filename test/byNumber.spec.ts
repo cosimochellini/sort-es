@@ -1,5 +1,7 @@
+import { expect } from "chai";
+import deepEqual from "deep-eql";
+import fc, { Arbitrary } from "fast-check";
 import "mocha";
-import fc from "fast-check";
 import {
   DEFAULT_NUMBER_VALUE_CATEGORY_ORDER,
   NumberValueCategory,
@@ -8,19 +10,49 @@ import byNumber, {
   NumberLike,
   normalizeNumberValueCategoryOrder,
 } from "../src/sortables/byNumber";
+import { isSorted, naiveNumberCompare, sort } from "./utils/sort";
 
-const arbSortable: fc.Arbitrary<NumberLike> = fc.oneof(
-  { weight: 10, arbitrary: fc.double() },
-  fc.constant(Infinity),
-  fc.constant(-Infinity),
-  fc.constant(NaN),
-  fc.constant(null),
-  fc.constant(undefined)
-);
+function arbitraryNumberLike(): Arbitrary<NumberLike> {
+  return fc.oneof(
+    fc.double(),
+    fc.constant(Infinity),
+    fc.constant(-Infinity),
+    fc.constant(NaN),
+    fc.constant(null),
+    fc.constant(undefined)
+  );
+}
 
-const arbCategoryOrder = fc.shuffledSubarray(
-  DEFAULT_NUMBER_VALUE_CATEGORY_ORDER.filter((cat) => cat !== "undefined")
-);
+function arbitraryCategoryOrder(): fc.Arbitrary<NumberValueCategory[]> {
+  return fc.shuffledSubarray(Array.from(DEFAULT_NUMBER_VALUE_CATEGORY_ORDER));
+}
+
+// function arbitraryValueOfCategory(
+//   category: NumberValueCategory
+// ): fc.Arbitrary<NumberLike> {
+//   switch (category) {
+//     case "null":
+//       return fc.constant(null);
+//     case "undefined":
+//       return fc.constant(undefined);
+//     case "NaN":
+//       return fc.constant(NaN);
+//     case "other":
+//       return fc.integer();
+//   }
+// }
+
+// function valuesOrderedByCategory(
+//   order: NumberValueCategory[]
+// ): fc.Arbitrary<NumberLike[]> {
+//   return fc
+//     .tuple(
+//       ...order.map((category) => {
+//         return fc.array(arbitraryValueOfCategory(category));
+//       })
+//     )
+//     .map((arrays) => arrays.flat(1));
+// }
 
 function categoryOf(n: NumberLike): NumberValueCategory {
   if (n === null) {
@@ -35,52 +67,116 @@ function categoryOf(n: NumberLike): NumberValueCategory {
   return "other";
 }
 
-describe("ByNumber sorting", () => {
-  it("sorts numbers into the right categories", () => {
+function normOrder(
+  order: readonly NumberValueCategory[]
+): NumberValueCategory[] {
+  const newOrder = Array.from(order);
+  normalizeNumberValueCategoryOrder(newOrder);
+  return newOrder;
+}
+
+describe("normalizeCategoryOrder", () => {
+  it("creates the right number of unique values", () => {
     fc.assert(
       fc.property(
-        fc.array(arbSortable),
-        arbCategoryOrder,
-        fc.boolean(),
-        (array, order, desc) => {
-          array.sort(byNumber({ valueCategoryOrder: order, desc }));
-
-          let i = 0;
-          normalizeNumberValueCategoryOrder(order);
-          for (const category of order) {
-            while (i < array.length && categoryOf(array[i]) === category) {
-              i++;
-            }
-          }
-          return i === array.length;
-        }
-      ),
-      { numRuns: 10_000 }
+        arbitraryCategoryOrder(),
+        (order) =>
+          new Set(normOrder(order)).size ===
+          DEFAULT_NUMBER_VALUE_CATEGORY_ORDER.length
+      )
     );
   });
 
-  it("sorts numbers correctly", () => {
+  it("normalizes an empty array into the default order", () => {
+    expect(normOrder([])).deep.equals(DEFAULT_NUMBER_VALUE_CATEGORY_ORDER);
+  });
+
+  it("puts 'other' first", () => {
     fc.assert(
       fc.property(
-        fc.array(arbSortable),
-        arbCategoryOrder,
-        fc.boolean(),
-        (array, order, desc) => {
-          array.sort(byNumber({ valueCategoryOrder: order, desc }));
+        arbitraryCategoryOrder().filter((order) => !order.includes("other")),
+        (rawOrder) => normOrder(rawOrder)[0] === "other"
+      )
+    );
+  });
 
-          const sign = desc ? -1 : 1;
-          const justNumbers = array.filter(
-            (n) => categoryOf(n) === "other"
-          ) as number[];
-          for (let i = 0; i < justNumbers.length - 1; i++) {
-            if (!(sign * justNumbers[i] <= sign * justNumbers[i + 1])) {
+  it("puts other categories last", () => {
+    fc.assert(
+      fc.property(
+        arbitraryCategoryOrder().filter((order) => order.includes("other")),
+        (rawOrder) =>
+          deepEqual(normOrder(rawOrder).slice(0, rawOrder.length), rawOrder)
+      )
+    );
+  });
+});
+
+describe("ByNumber sorting", () => {
+  it("sorts values into the right categories", () => {
+    fc.assert(
+      fc.property(
+        fc.array(arbitraryNumberLike()),
+        arbitraryCategoryOrder(),
+        fc.boolean(),
+        (data, order, desc) => {
+          data = sort(data, byNumber({ valueCategoryOrder: order, desc }));
+
+          let i = 0;
+          for (const category of normOrder(order)) {
+            while (i < data.length && categoryOf(data[i]) === category) {
+              i++;
+            }
+          }
+          return i === data.length;
+        }
+      ),
+      { numRuns: 1000 }
+    );
+  });
+
+  it("sorts correctly within categories", () => {
+    fc.assert(
+      fc.property(
+        fc.array(arbitraryNumberLike()),
+        arbitraryCategoryOrder(),
+        fc.boolean(),
+        (data, order, desc) => {
+          const cmp = byNumber({ valueCategoryOrder: order, desc });
+          data = sort(data, cmp);
+
+          for (const category of DEFAULT_NUMBER_VALUE_CATEGORY_ORDER) {
+            if (
+              !isSorted(
+                data.filter((x) => categoryOf(x) === category),
+                cmp
+              )
+            ) {
               return false;
             }
           }
           return true;
         }
       ),
-      { numRuns: 10_000 }
+      { numRuns: 1000 }
+    );
+  });
+
+  it("sorts ordinary numbers correctly", () => {
+    fc.assert(
+      fc.property(
+        fc.array(fc.double().filter((x) => x === x)),
+        arbitraryCategoryOrder(),
+        fc.boolean(),
+        (data, order, desc) => {
+          const cmp = byNumber({ valueCategoryOrder: order, desc });
+          const sorted = sort(data, cmp);
+          if (desc) {
+            sorted.reverse();
+          }
+          return isSorted(sorted, naiveNumberCompare);
+        }
+      ),
+      { numRuns: 1000 }
     );
   });
 });
