@@ -27,33 +27,6 @@ function arbitraryCategoryOrder(): fc.Arbitrary<NumberValueCategory[]> {
   return fc.shuffledSubarray(Array.from(DEFAULT_NUMBER_VALUE_CATEGORY_ORDER));
 }
 
-// function arbitraryValueOfCategory(
-//   category: NumberValueCategory
-// ): fc.Arbitrary<NumberLike> {
-//   switch (category) {
-//     case "null":
-//       return fc.constant(null);
-//     case "undefined":
-//       return fc.constant(undefined);
-//     case "NaN":
-//       return fc.constant(NaN);
-//     case "other":
-//       return fc.integer();
-//   }
-// }
-
-// function valuesOrderedByCategory(
-//   order: NumberValueCategory[]
-// ): fc.Arbitrary<NumberLike[]> {
-//   return fc
-//     .tuple(
-//       ...order.map((category) => {
-//         return fc.array(arbitraryValueOfCategory(category));
-//       })
-//     )
-//     .map((arrays) => arrays.flat(1));
-// }
-
 function categoryOf(n: NumberLike): NumberValueCategory {
   if (n === null) {
     return "null";
