@@ -1,54 +1,135 @@
+import { expect } from "chai";
+import fc from "fast-check";
 import "mocha";
-import {expect} from "chai";
-import {byNumber} from "../src/index";
-import {getFirstAndLast, reverse} from "./utils/sort";
-import {expectObjectToBeEquals} from "./utils/expectFns";
+import {
+  DEFAULT_NUMBER_VALUE_CATEGORY_ORDER,
+  NumberValueCategory,
+  SortByNumberOption,
+} from "../src/interfaces/interfaces";
+import byNumber, {
+  NumberLike,
+  normalizeNumberValueCategoryOrder,
+} from "../src/sortables/byNumber";
 
-const arrayUnsorted = [44, 12, 34, 124, 21.5];
-const correctArraySorted = [12, 21.5, 34, 44, 124];
+function someCategory(): fc.Arbitrary<NumberValueCategory> {
+  return fc.constantFrom(...DEFAULT_NUMBER_VALUE_CATEGORY_ORDER);
+}
+
+function someCategoryOrder(): fc.Arbitrary<NumberValueCategory[]> {
+  return fc.shuffledSubarray(Array.from(DEFAULT_NUMBER_VALUE_CATEGORY_ORDER));
+}
+
+function someInstanceOfCategory(
+  category: NumberValueCategory
+): fc.Arbitrary<NumberLike> {
+  switch (category) {
+    case "undefined":
+      return fc.constant(undefined);
+    case "NaN":
+      return fc.constant(NaN);
+    case "null":
+      return fc.constant(null);
+    case "other":
+      return fc.double({ noNaN: true });
+  }
+}
+
+function someCategoryAndValue(): fc.Arbitrary<
+  [NumberValueCategory, NumberLike]
+> {
+  return someCategory().chain((category) =>
+    fc.tuple(fc.constant(category), someInstanceOfCategory(category))
+  );
+}
+
+function someSortByNumberOption(): fc.Arbitrary<SortByNumberOption> {
+  return fc
+    .tuple(someCategoryOrder(), fc.boolean())
+    .map(([valueCategoryOrder, desc]) => ({
+      valueCategoryOrder,
+      desc,
+    }));
+}
+
+function normOrder(
+  order: readonly NumberValueCategory[]
+): NumberValueCategory[] {
+  const newOrder = Array.from(order);
+  normalizeNumberValueCategoryOrder(newOrder);
+  return newOrder;
+}
+
+describe("normalizeCategoryOrder", () => {
+  it("creates the right number of unique values", () => {
+    fc.assert(
+      fc.property(
+        someCategoryOrder(),
+        (order) =>
+          new Set(normOrder(order)).size ===
+          DEFAULT_NUMBER_VALUE_CATEGORY_ORDER.length
+      )
+    );
+  });
+
+  it("normalizes an empty array into the default order", () => {
+    expect(normOrder([])).deep.equals(DEFAULT_NUMBER_VALUE_CATEGORY_ORDER);
+  });
+
+  it("puts 'other' first", () => {
+    fc.assert(
+      fc.property(
+        someCategoryOrder().filter((order) => !order.includes("other")),
+        (rawOrder) => normOrder(rawOrder)[0] === "other"
+      )
+    );
+  });
+
+  it("puts other categories last", () => {
+    fc.assert(
+      fc.property(
+        someCategoryOrder().filter((order) => order.includes("other")),
+        (rawOrder) => {
+          expect(normOrder(rawOrder).slice(0, rawOrder.length)).deep.equals(
+            rawOrder
+          );
+        }
+      )
+    );
+  });
+});
 
 describe("ByNumber sorting", () => {
-  it("Does sort an array by number", () => {
-    const arraySorted = arrayUnsorted.sort(byNumber());
-
-    const [first, last] = getFirstAndLast(arraySorted);
-
-    expect(first).to.equal(12);
-
-    expect(last).to.equal(124);
-
-    expectObjectToBeEquals(arraySorted, correctArraySorted);
+  it("sorts correctly by category", () => {
+    fc.assert(
+      fc.property(
+        someSortByNumberOption(),
+        someCategoryAndValue(),
+        someCategoryAndValue(),
+        (sortOpts, [cat1, val1], [cat2, val2]) => {
+          fc.pre(cat1 !== cat2);
+          const order = normOrder(sortOpts.valueCategoryOrder!);
+          expect(Math.sign(byNumber(sortOpts)(val1, val2))).equals(
+            Math.sign(order.indexOf(cat1) - order.indexOf(cat2))
+          );
+        }
+      )
+    );
   });
-});
 
-describe("ByNumber sorting desc", () => {
-  it("Does sort an array by string descending", () => {
-    const arraySorted = arrayUnsorted.sort(byNumber({desc: true}));
-
-    const [first, last] = getFirstAndLast(arraySorted);
-
-    expect(first).to.equal(124);
-
-    expect(last).to.equal(12);
-
-    expectObjectToBeEquals(arraySorted, reverse(correctArraySorted));
-  });
-});
-
-
-describe("ByNumber sorting with infinite values", () => {
-  it("Does sort an array by number", () => {
-    const arrayUnsortedWithInfinity = [44, 12, 34, 124, 21.5, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY];
-    const correctArraySortedWithInfinity = [Number.NEGATIVE_INFINITY, 12, 21.5, 34, 44, 124, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY];
-
-    const arraySorted = arrayUnsortedWithInfinity.sort(byNumber());
-
-    const [first, last] = getFirstAndLast(arraySorted);
-
-    expect(first).to.equal(Number.NEGATIVE_INFINITY);
-
-    expect(last).to.equal(Number.POSITIVE_INFINITY);
-
-    expectObjectToBeEquals(arraySorted, correctArraySortedWithInfinity);
+  it("sorts ordinary numbers correctly", () => {
+    fc.assert(
+      fc.property(
+        someSortByNumberOption(),
+        fc.double({ noNaN: true }),
+        fc.double({ noNaN: true }),
+        (sortOpts, val1, val2) => {
+          const sign = sortOpts.desc ? -1 : 1;
+          return (
+            Math.sign(byNumber(sortOpts)(val1, val2)) ===
+            sign * Math.sign(val1 - val2)
+          );
+        }
+      )
+    );
   });
 });
