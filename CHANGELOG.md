@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.5](https://github.com/cosimochellini/sort-es/compare/v1.7.4...v1.7.5) (2024-01-07)
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([ef115d7](https://github.com/cosimochellini/sort-es/commit/ef115d7b5d589bb69482734c2139ef46e88980f2))
+
 ### [1.7.4](https://github.com/cosimochellini/sort-es/compare/v1.7.3...v1.7.4) (2023-11-18)
 
 ### [1.7.3](https://github.com/cosimochellini/sort-es/compare/v1.7.2...v1.7.3) (2023-10-28)
