@@ -5,6 +5,14 @@ import byString from "../sortables/byString";
 import { SortOption } from "../interfaces/interfaces";
 import { isDate, isNumber, isString } from "../utils/typeCheck";
 
+/**
+ * the sortable that works on **`number`, `string`, and `Date` values**,
+ * provided the types are not mixed
+ * @param options the options to sort the values
+ *
+ * {@link https://sort-es.netlify.app/by-default byDefault docs}
+ * @version 1.8.0
+ */
 const byAny = <T extends string | number | Date>(
   options: SortOption = { desc: false }
 ): sortable<T> => {
