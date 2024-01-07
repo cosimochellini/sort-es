@@ -1,0 +1,21 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug tests",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/node_modules/.bin/mocha",
+      "runtimeArgs": ["--require", "ts-node/register"],
+      "args": ["${relativeFile}"],
+      "outFiles": [
+        "${workspaceFolder}/src/**/*.js",
+        "${workspaceFolder}/test/**/*.js"
+      ]
+    }
+  ]
+}

@@ -5,4 +5,6 @@ const getFirstAndLast = <T>(array: T[]): [T, T] => {
 
 const reverse = <T>(array: T[]): T[] => array.concat().reverse();
 
-export {getFirstAndLast, reverse}
+const descToSign = (desc: boolean): number => desc ? -1 : 1;
+
+export {getFirstAndLast, reverse, descToSign}

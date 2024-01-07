@@ -6,6 +6,7 @@ import byString from "./sortables/byString";
 import byNumber from "./sortables/byNumber";
 import byBoolean from "./sortables/byBoolean";
 import sortAsync, { AsyncArray } from "./sortables/byAsyncValue";
+import lexicographically from "./sortables/lexicographically";
 
 export default {
   byAny,
@@ -17,6 +18,7 @@ export default {
   sortAsync,
   byBoolean,
   AsyncArray,
+  lexicographically,
 };
 
 export {
@@ -29,4 +31,5 @@ export {
   sortAsync,
   byBoolean,
   AsyncArray,
+  lexicographically,
 };
