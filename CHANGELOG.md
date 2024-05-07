@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.9](https://github.com/cosimochellini/sort-es/compare/v1.7.8...v1.7.9) (2024-05-07)
+
+
+### Bug Fixes
+
+* **dep:** updated dependency ([77906cd](https://github.com/cosimochellini/sort-es/commit/77906cd6c2fe23c31b1d78a31137b3b83e07c098))
+* **node:** set version to 18 ([0db53f0](https://github.com/cosimochellini/sort-es/commit/0db53f0133a9f262fb15adc64feed44cba59a723))
+
 ### [1.7.8](https://github.com/cosimochellini/sort-es/compare/v1.7.7...v1.7.8) (2024-03-30)
 
 
