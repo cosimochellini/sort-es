@@ -11,7 +11,7 @@
 
 ## Blazing fast, tree-shakeable, type-safe, modern utility library to sort any type of array
 
-## Docs : https://sort-es.netlify.com/
+## Docs : https://sort-es.netlify.app/
 
 # Getting started
 
@@ -130,7 +130,7 @@ import {byValue, byNumber, byString} from 'sort-es'
 
 const objsArray = [{numbProp: 2, stringProp: 'a'}, {numbProp: 3, stringProp: 'f'}];
 
-//Incorrect sort property 
+//Incorrect sort property
 const incorrectSortedArray = objsArray.sort(byValue(i => i.numbProp, byString()));
 //ts check error : Type 'number' is not assignable to type 'string'.
 
@@ -142,7 +142,7 @@ const sortedArray = objsArray.sort(byValue(i => i.numbProp, byNumber()))
 
 ## See full Docs
 
-### [**sort-es.netlify.com**](https://sort-es.netlify.com)
+### [**sort-es.netlify.app**](https://sort-es.netlify.app)
 
 # License
 

@@ -48,7 +48,7 @@
   "files": [
     "lib/**/*"
   ],
-  "homepage": "https://sort-es.netlify.com",
+  "homepage": "https://sort-es.netlify.app",
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint",
