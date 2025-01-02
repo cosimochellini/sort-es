@@ -39,6 +39,7 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "sort-es": "^1.7.12",
     "source-map-support": "^0.5.21",
+    "standard-version": "^9.5.0",
     "terser": "^5.36.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
@@ -104,5 +105,5 @@
   },
   "sideEffects": false,
   "types": "lib/src",
-  "version": "1.7.13"
+  "version": "1.7.14"
 }
