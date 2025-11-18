@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.18](https://github.com/cosimochellini/sort-es/compare/v1.7.17...v1.7.18) (2025-11-18)
+
+
+### Bug Fixes
+
+* **dep:** updated commitlint ([9282460](https://github.com/cosimochellini/sort-es/commit/9282460ddb1a7c06aaad40ddee4898bc9d423923))
+* **dep:** updated dependency ([2194da3](https://github.com/cosimochellini/sort-es/commit/2194da3c067a10471712b394ebb6d1b681c7ca56))
+* **dep:** updated eslint ([fbd18c3](https://github.com/cosimochellini/sort-es/commit/fbd18c387b58f1a3e63e302118819911d36c7da0))
+* **dep:** updated last major deps ([44f7e21](https://github.com/cosimochellini/sort-es/commit/44f7e215faa3c859918754d89b838aff3445a5ff))
+* **dep:** updated node ([3a8b22a](https://github.com/cosimochellini/sort-es/commit/3a8b22a61052a5ece0389a6e7107e59d1f254b13))
+* **dep:** updated rollup ([bdafdb8](https://github.com/cosimochellini/sort-es/commit/bdafdb850a6f1492b1719dfa7bce9ad113a2dcf2))
+
 ### [1.7.17](https://github.com/cosimochellini/sort-es/compare/v1.7.16...v1.7.17) (2025-09-20)
 
 
