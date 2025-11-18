@@ -30,6 +30,12 @@
     "strictNullChecks": true,
     "target": "ESNext"
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
+    "transpileOnly": true
+  },
   "exclude": [
     "node_modules",
     "lib",
