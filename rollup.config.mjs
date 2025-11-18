@@ -1,7 +1,12 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
-import pkg from "./package.json";
+import { readFileSync } from "fs";
+
+// Read package.json for output paths
+const pkg = JSON.parse(
+  readFileSync(new URL("./package.json", import.meta.url), "utf-8")
+);
 
 // noinspection JSUnusedGlobalSymbols
 export default {
